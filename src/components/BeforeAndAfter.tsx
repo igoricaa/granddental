@@ -1,70 +1,157 @@
-// 'use client'
+'use client';
 
-// import * as React from 'react'
-// import Image from 'next/image'
-// import { Slider } from '@/components/ui/slider'
-// import { cn } from '@/lib/utils'
+import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+import { type StaticImageData } from 'next/image';
+import Subtitle from './UI/Subtitle';
 
-// interface BeforeAfterProps {
-//   beforeImage: string
-//   afterImage: string
-//   beforeAlt: string
-//   afterAlt: string
-//   className?: string
-// }
+interface ImageComparisonProps {
+  beforeImage: string | StaticImageData;
+  afterImage: string | StaticImageData;
+  width: number;
+  height: number;
+  initialPosition?: number;
+  className?: string;
+}
 
-// export default function Component({
-//   beforeImage = '/placeholder.svg?height=400&width=600',
-//   afterImage = '/placeholder.svg?height=400&width=600',
-//   beforeAlt = 'Before image',
-//   afterAlt = 'After image',
-//   className,
-// }: BeforeAfterProps) {
-//   const [sliderPosition, setSliderPosition] = React.useState(50)
-//   const containerRef = React.useRef<HTMLDivElement>(null)
+interface Position {
+  x: number;
+  percentage: number;
+}
 
-//   const handleSliderChange = (value: number[]) => {
-//     setSliderPosition(value[0])
-//   }
+const ImageComparison: React.FC<ImageComparisonProps> = ({
+  beforeImage,
+  afterImage,
+  width,
+  height,
+  initialPosition = 50,
+  className = '',
+}) => {
+  const [isResizing, setIsResizing] = useState<boolean>(false);
+  const [position, setPosition] = useState<number>(initialPosition);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-//   return (
-//     <div className={cn('relative max-w-3xl mx-auto', className)} ref={containerRef}>
-//       <div className="relative aspect-[3/2] overflow-hidden">
-//         <Image
-//           src={beforeImage}
-//           alt={beforeAlt}
-//           fill
-//           className="object-cover"
-//         />
-//         <div
-//           className="absolute top-0 right-0 bottom-0 overflow-hidden"
-//           style={{ width: `${sliderPosition}%` }}
-//         >
-//           <Image
-//             src={afterImage}
-//             alt={afterAlt}
-//             fill
-//             className="object-cover"
-//           />
-//         </div>
-//         <div
-//           className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
-//           style={{ left: `calc(${sliderPosition}% - 2px)` }}
-//         />
-//       </div>
-//       <Slider
-//         min={0}
-//         max={100}
-//         step={1}
-//         value={[sliderPosition]}
-//         onValueChange={handleSliderChange}
-//         className="mt-4"
-//         aria-label="Image comparison slider"
-//       />
-//       <div className="flex justify-between mt-2 text-sm text-muted-foreground">
-//         <span>Before</span>
-//         <span>After</span>
-//       </div>
-//     </div>
-//   )
-// }
+  const calculatePosition = (pageX: number): Position => {
+    if (!containerRef.current) {
+      return { x: 0, percentage: initialPosition };
+    }
+
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = pageX - rect.left;
+    const percentage = Math.min(Math.max(0, (x / rect.width) * 100), 100);
+
+    return { x, percentage };
+  };
+
+  useEffect(() => {
+    const handleResize = (e: MouseEvent): void => {
+      if (!isResizing) return;
+      e.preventDefault();
+      const { percentage } = calculatePosition(e.pageX);
+      setPosition(percentage);
+    };
+
+    const handleMouseUp = (): void => {
+      setIsResizing(false);
+    };
+
+    if (isResizing) {
+      window.addEventListener('mousemove', handleResize);
+      window.addEventListener('mouseup', handleMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleResize);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isResizing]);
+
+  const handleTouchMove = (e: React.TouchEvent): void => {
+    if (!isResizing) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const { percentage } = calculatePosition(touch.pageX);
+    setPosition(percentage);
+  };
+
+  return (
+    <section
+      className={`flex flex-col items-center relative max-w-8xl mx-auto py-24 ${className}`}
+    >
+      <Subtitle variant='secondary'>Rezultati</Subtitle>
+      <h2 className='text-5xl underlined mt-6'>Pre i posle nas</h2>
+      <p className='mt-6 text-2xl'>
+        Pogledajte neke od primera naših radova i uverite se sami u kvalitet
+        naših usluga.
+      </p>
+
+      <div
+        ref={containerRef}
+        className='relative mx-auto select-none overflow-hidden bg-gray-100 mt-12'
+        style={{
+          width: width,
+          height: height,
+        }}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={() => setIsResizing(false)}
+      >
+        <div className='absolute inset-0'>
+          <Image
+            src={afterImage}
+            alt='Grand Dental rezultati'
+            quality={90}
+            priority
+            fill
+            className='object-cover'
+            sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+          />
+        </div>
+
+        <div
+          className='absolute inset-0'
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        >
+          <Image
+            src={beforeImage}
+            alt='Grand Dental rezultati'
+            quality={90}
+            priority
+            fill
+            className='object-cover'
+            sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+          />
+        </div>
+
+        <div
+          className='absolute inset-y-0 transition-transform duration-75'
+          style={{ left: `${position}%` }}
+        >
+          <div className='absolute inset-y-0 -ml-px w-0.5 bg-white shadow-lg' />
+          <button
+            type='button'
+            aria-label='Comparison slider'
+            className='absolute top-1/2 -translate-y-1/2 -ml-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200'
+            onMouseDown={() => setIsResizing(true)}
+            onTouchStart={() => setIsResizing(true)}
+          >
+            <svg
+              className='w-4 h-4 text-gray-600'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M8 9l4-4 4 4m0 6l-4 4-4-4'
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ImageComparison;
