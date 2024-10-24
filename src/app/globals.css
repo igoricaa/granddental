@@ -88,3 +88,11 @@ p {
     }
   }
 }
+
+.tworows {
+  &:before {
+    left: unset;
+    right: 23%;
+    width: 30%;
+  }
+}
