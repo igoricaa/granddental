@@ -16,14 +16,13 @@
 body {
   background: var(--background);
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--font-inter);
+  font-family: var(--font-brandon-regular);
   font-weight: 400;
 }
 
@@ -44,6 +43,7 @@ h5,
 h6 {
   font-weight: 400;
   line-height: 1;
+  font-family: var(--font-joan);
 }
 /* 
 h1 {
