@@ -8,21 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '8xl': '1440px',
+      },
+      screens: {
+        'max-w-8xl': '1440px',
+      },
       colors: {
         background: 'var(--background)',
-        foreground: 'var(--foreground)',
         primary: {
-          default: 'rgba(238, 192, 136, 1)',
-          dark: 'rgba(235, 180, 114, 1)',
+          default: 'var(--primary-color)',
+          dark: 'var(--primary-color-dark)',
         },
         accent: {
-          default: 'rgba(41, 160, 165, 1)',
-          dark: 'rgba(36, 140, 145, 1)',
+          default: 'var(--accent-color)',
+          dark: 'var(--accent-color-dark)',
         },
         bgmain: {
-          default: 'rgba(78, 78, 78, 1)',
-          dark: 'rgba(78, 78, 78, 0.8)',
+          default: 'var(--bgmain-color)',
+          dark: 'var(--bgmain-color-dark)',
         },
+        textDark: 'var(--text-dark)',
+        buttonTextDark: 'var(--button-text-dark)',
       },
     },
   },

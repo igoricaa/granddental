@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const Button = ({
   children,
@@ -13,7 +13,11 @@ const Button = ({
   variant?: 'primary' | 'secondary';
 }) => {
   const commonProps = {
-    className: `text-white w-fit px-8 py-4 block transition-all duration-300 bg-primary-default hover:bg-primary-dark ${className}`,
+    className: ` w-fit px-8 py-4 block transition-colors duration-300  ${
+      variant === 'secondary'
+        ? 'bg-white text-buttonTextDark border border-primary-dark hover:border-white hover:bg-primary-default hover:text-white'
+        : 'text-white bg-primary-default hover:bg-primary-dark'
+    } ${className}`,
     ...props,
   };
 
