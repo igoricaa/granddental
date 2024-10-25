@@ -44,7 +44,7 @@ const ServicesSection = () => {
         className={`max-w-8xl mx-auto flex gap-12 items-center px-16 transition-all duration-1000 ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible'
-            : 'translate-y-full opacity-0 invisible'
+            : 'translate-y-32 opacity-0 invisible'
         }`}
       >
         <h2 className='text-6xl text-nowrap text-primary-default'>
@@ -58,7 +58,7 @@ const ServicesSection = () => {
       </div>
 
       <ServiceItem {...services.protetika} />
-      <ServiceItem {...services.implantologija} invert className='mt-8' />
+      <ServiceItem {...services.implantologija} invert className='mt-56' />
     </section>
   );
 };

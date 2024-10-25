@@ -10,13 +10,13 @@ const AboutSection = () => {
   const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
 
   return (
-    <section className='max-w-8xl mx-auto py-32 flex justify-between items-center gap-16 px-8'>
+    <section
+      ref={ref}
+      className=' mx-auto py-32 flex justify-center items-center gap-16 px-8 overflow-hidden'
+    >
       <div
-        ref={ref}
-        className={`relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
-          inView
-            ? 'translate-y-0 opacity-100 visible'
-            : 'translate-y-full opacity-0 invisible'
+        className={`max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
+          inView ? 'translate-y-0 opacity-100' : 'translate-y-64 opacity-0'
         }`}
       >
         <Image
@@ -29,10 +29,8 @@ const AboutSection = () => {
 
       <div
         ref={ref}
-        className={`flex-1 transition-all duration-[1500ms] ease-in-out ${
-          inView
-            ? 'translate-x-0 opacity-100 visible'
-            : 'translate-x-full opacity-0 invisible'
+        className={`max-w-2xl flex-1 transition-all duration-[1500ms] ease-in-out ${
+          inView ? 'translate-x-0 opacity-100' : 'translate-x-80 opacity-0'
         }`}
       >
         <Subtitle>O nama</Subtitle>

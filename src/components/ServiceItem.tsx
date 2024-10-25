@@ -35,7 +35,7 @@ const ServiceItem = ({
   return (
     <article
       ref={ref}
-      className={`flex items-center justify-center py-28 ${
+      className={`flex items-center justify-center mt-40 ${
         invert ? 'flex-row-reverse' : ''
       } ${className}`}
     >
@@ -44,7 +44,7 @@ const ServiceItem = ({
           inView
             ? 'translate-x-0 opacity-100 visible'
             : `${
-                invert ? 'translate-x-full' : '-translate-x-full'
+                invert ? 'translate-x-80' : '-translate-x-80'
               } opacity-0 invisible`
         } transition-all duration-[1500ms] ease-in-out`}
       >
@@ -63,7 +63,7 @@ const ServiceItem = ({
         className={`relative z-10 flex-1 aspect-[700/467] min-w-[600px] max-w-[700px] group transition-all duration-1000 ease-in-out overflow-hidden ${invert ? 'translate-x-24' : '-translate-x-24'} ${
           inView
             ? 'translate-y-0 opacity-100 visible'
-            : 'translate-y-full opacity-0 invisible'
+            : 'translate-y-80 opacity-0 invisible'
         }`}
       >
         <Image
