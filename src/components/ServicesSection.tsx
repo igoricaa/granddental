@@ -1,8 +1,11 @@
+'use client';
+
 import protetikaImage1 from '@/../public/services/protetika-1.jpg';
 import protetikaImage2 from '@/../public/services/protetika-2.jpg';
 import hirurgijaImage1 from '@/../public/services/hirurgija-1.jpg';
 import hirurgijaImage2 from '@/../public/services/hirurgija-2.webp';
 import ServiceItem from './ServiceItem';
+import { useInView } from 'react-intersection-observer';
 
 const services = {
   protetika: {
@@ -32,9 +35,18 @@ const services = {
 };
 
 const ServicesSection = () => {
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
+
   return (
-    <section className='py-32 px-8'>
-      <div className='max-w-8xl mx-auto flex gap-12 items-center px-16'>
+    <section className='py-32 px-16 overflow-hidden '>
+      <div
+        ref={ref}
+        className={`max-w-8xl mx-auto flex gap-12 items-center px-16 transition-all duration-1000 ease-in-out ${
+          inView
+            ? 'translate-y-0 opacity-100 visible'
+            : 'translate-y-full opacity-0 invisible'
+        }`}
+      >
         <h2 className='text-6xl text-nowrap text-primary-default'>
           Naše usluge
         </h2>
@@ -46,7 +58,7 @@ const ServicesSection = () => {
       </div>
 
       <ServiceItem {...services.protetika} />
-      <ServiceItem {...services.implantologija} invert />
+      <ServiceItem {...services.implantologija} invert className='mt-8' />
     </section>
   );
 };

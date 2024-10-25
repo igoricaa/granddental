@@ -1,12 +1,24 @@
+'use client';
+
 import Image from 'next/image';
 import Button from './UI/Button';
 import aboutImage from '@/../public/about.jpeg';
 import Subtitle from './UI/Subtitle';
+import { useInView } from 'react-intersection-observer';
 
 const AboutSection = () => {
+  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+
   return (
     <section className='max-w-8xl mx-auto py-32 flex justify-between items-center gap-16 px-8'>
-      <div className='relative flex-1 aspect-[700/467]'>
+      <div
+        ref={ref}
+        className={`relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
+          inView
+            ? 'translate-y-0 opacity-100 visible'
+            : 'translate-y-full opacity-0 invisible'
+        }`}
+      >
         <Image
           src={aboutImage}
           alt='Grand Dental Klinika - O nama'
@@ -15,7 +27,14 @@ const AboutSection = () => {
         />
       </div>
 
-      <div className='flex-1'>
+      <div
+        ref={ref}
+        className={`flex-1 transition-all duration-[1500ms] ease-in-out ${
+          inView
+            ? 'translate-x-0 opacity-100 visible'
+            : 'translate-x-full opacity-0 invisible'
+        }`}
+      >
         <Subtitle>O nama</Subtitle>
         <h2 className='mt-8 text-4xl underlined'>
           Ko smo mi i zašto nas birate?

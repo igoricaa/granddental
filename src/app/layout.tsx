@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Joan } from 'next/font/google';
 import './globals.css';
+import { ViewTransitions } from 'next-view-transitions';
+import Lenis from '@/components/Lenis';
 
 const joan = Joan({
   subsets: ['latin'],
@@ -33,12 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body
-        className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang='en'>
+        <body
+          className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased`}
+        >
+          <Lenis>{children}</Lenis>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
