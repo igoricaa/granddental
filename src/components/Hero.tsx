@@ -10,7 +10,6 @@ const Hero = () => {
         alt='Grand Dental klinika'
         fill
         sizes='100vw'
-        quality={100}
         priority
         className='object-cover -z-10'
       />

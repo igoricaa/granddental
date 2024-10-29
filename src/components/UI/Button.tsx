@@ -15,7 +15,7 @@ const Button = ({
   externalLink?: boolean;
 }) => {
   const commonProps = {
-    className: ` w-fit px-8 py-4 block transition-colors duration-300 text-nowrap  ${
+    className: ` w-fit px-8 py-4 block transition-colors duration-300 text-nowrap font-brandonBold  ${
       variant === 'secondary'
         ? 'bg-white text-buttonTextDark border border-primary-dark hover:border-white hover:bg-primary-default hover:text-white'
         : 'text-black bg-primary-default hover:bg-primary-dark'

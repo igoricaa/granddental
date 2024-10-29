@@ -31,6 +31,10 @@ const config: Config = {
         textDark: 'var(--text-dark)',
         buttonTextDark: 'var(--button-text-dark)',
       },
+      fontFamily: {
+        brandon: ['var(--font-brandon-regular)'],
+        brandonBold: ['var(--font-brandon-bold)'],
+      },
     },
   },
   plugins: [],

@@ -7,10 +7,13 @@ import ctaImage2 from '@/../public/contact-2.jpeg';
 import { useInView } from 'react-intersection-observer';
 
 const CtaSection = () => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
   return (
-    <section className='my-32 px-10 py-56 relative flex flex-col items-center justify-center max-w-8xl mx-auto'>
+    <section
+      ref={ref}
+      className='my-32 px-10 py-56 relative flex flex-col items-center justify-center max-w-8xl mx-auto'
+    >
       <Image
         src={ctaImage1}
         alt='cta'
@@ -34,7 +37,6 @@ const CtaSection = () => {
         }`}
       />
       <h2
-        ref={ref}
         className={`text-5xl underlined tworows text-center transition-all duration-1000 ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible'
