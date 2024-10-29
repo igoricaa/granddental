@@ -9,6 +9,7 @@ import { useInView } from 'react-intersection-observer';
 
 const services = {
   protetika: {
+    id: 'protetika',
     subtitle: 'Protetika',
     title: 'Protetika u Grand Dentalu',
     description1:
@@ -22,6 +23,7 @@ const services = {
     image2: protetikaImage2,
   },
   implantologija: {
+    id: 'implantologija',
     subtitle: 'Hirurgija',
     title: 'Hirurgija i implantologija u Grand Dentalu',
     description1:

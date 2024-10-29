@@ -6,6 +6,7 @@ import Subtitle from './UI/Subtitle';
 import { useInView } from 'react-intersection-observer';
 
 type ServiceItemProps = {
+  id: string;
   subtitle: string;
   title: string;
   description1: string;
@@ -19,6 +20,7 @@ type ServiceItemProps = {
 };
 
 const ServiceItem = ({
+  id,
   subtitle,
   title,
   description1,
@@ -34,6 +36,7 @@ const ServiceItem = ({
 
   return (
     <article
+      id={id}
       ref={ref}
       className={`flex items-center justify-center mt-40 ${
         invert ? 'flex-row-reverse' : ''

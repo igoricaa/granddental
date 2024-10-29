@@ -4,6 +4,7 @@ import { Joan } from 'next/font/google';
 import './globals.css';
 import { ViewTransitions } from 'next-view-transitions';
 import Lenis from '@/components/Lenis';
+import Header from '@/components/Header';
 
 const joan = Joan({
   subsets: ['latin'],
@@ -40,7 +41,10 @@ export default function RootLayout({
         <body
           className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased`}
         >
-          <Lenis>{children}</Lenis>
+          <Lenis>
+            <Header />
+            {children}
+          </Lenis>
         </body>
       </html>
     </ViewTransitions>
