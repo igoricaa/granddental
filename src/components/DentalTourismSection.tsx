@@ -37,7 +37,7 @@ const DentalTourismSection = () => {
           inView ? 'translate-y-0 opacity-100 visible' : 'translate-y-16 opacity-0 invisible'
         }`}
       >
-        <Subtitle variant='secondary'>Dentalni turizam</Subtitle>
+        <Subtitle>Dentalni turizam</Subtitle>
         <h2 className='text-5xl underlined mt-4'>Dentalni turizam</h2>
         <div className='flex gap-8 items-start mt-6'>
           <div>

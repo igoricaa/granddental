@@ -78,7 +78,7 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
     <section
       className={`flex flex-col items-center relative max-w-8xl mx-auto py-32 ${className}`}
     >
-      <Subtitle variant='secondary'>Rezultati</Subtitle>
+      <Subtitle>Rezultati</Subtitle>
       <h2 className='text-5xl underlined mt-6'>Pre i posle nas</h2>
       <p className='mt-6 text-2xl'>
         Pogledajte neke od primera naših radova i uverite se sami u kvalitet

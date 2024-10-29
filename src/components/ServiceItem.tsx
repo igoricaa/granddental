@@ -40,7 +40,9 @@ const ServiceItem = ({
       } ${className}`}
     >
       <div
-        className={`flex flex-col justify-center items-start bg-primary-default ${invert ? 'pr-16 pl-32' : 'pl-16 pr-32'} py-16 w-[50vw] max-w-5xl min-w-[600px] min-h-[560px] text-textDark ${
+        className={`flex flex-col justify-center items-start bg-primary-default ${
+          invert ? 'pr-16 pl-32' : 'pl-16 pr-32'
+        } py-16 w-[50vw] max-w-5xl min-w-[600px] min-h-[560px] text-textDark ${
           inView
             ? 'translate-x-0 opacity-100 visible'
             : `${
@@ -48,7 +50,7 @@ const ServiceItem = ({
               } opacity-0 invisible`
         } transition-all duration-[1500ms] ease-in-out`}
       >
-        <Subtitle variant='secondary'>{subtitle}</Subtitle>
+        <Subtitle>{subtitle}</Subtitle>
         <h3 className='text-4xl text-white mt-6'>{title}</h3>
         <p className='mt-8'>{description1}</p>
         {description2 && <p className='mt-6'>{description2}</p>}
@@ -60,7 +62,9 @@ const ServiceItem = ({
       </div>
 
       <div
-        className={`relative z-10 flex-1 aspect-[700/467] min-w-[600px] max-w-[700px] group transition-all duration-1000 ease-in-out overflow-hidden ${invert ? 'translate-x-24' : '-translate-x-24'} ${
+        className={`relative z-10 flex-1 aspect-[700/467] min-w-[600px] max-w-[700px] group transition-all duration-1000 ease-in-out overflow-hidden ${
+          invert ? 'translate-x-24' : '-translate-x-24'
+        } ${
           inView
             ? 'translate-y-0 opacity-100 visible'
             : 'translate-y-80 opacity-0 invisible'
