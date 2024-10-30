@@ -36,7 +36,7 @@ const SideArea = ({ isOpen, onClose }: SideAreaProps) => {
           <Image src={logo} alt='Grand Dental Logo' width={144} height={144} />
         </Link>
 
-        <h4 className='mt-8 font-bold text-xl'>Kontakt:</h4>
+        <h4 className='mt-8 font-bold text-xl'>Kontakt</h4>
         <div className='relative w-fit'>
           <p
             className='mt-4 cursor-pointer hover:opacity-80'

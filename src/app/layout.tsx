@@ -5,6 +5,7 @@ import './globals.css';
 import { ViewTransitions } from 'next-view-transitions';
 import Lenis from '@/components/Lenis';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const joan = Joan({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({
           <Lenis>
             <Header />
             {children}
+            <Footer />
           </Lenis>
         </body>
       </html>
