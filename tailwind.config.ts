@@ -12,6 +12,7 @@ const config: Config = {
         '8xl': '1440px',
       },
       screens: {
+        '2xl': '1500px',
         'max-w-8xl': '1440px',
       },
       colors: {

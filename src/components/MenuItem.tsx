@@ -1,6 +1,7 @@
 'use client';
 import { Link } from 'next-view-transitions';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const MenuItem = ({
   name,
@@ -15,9 +16,13 @@ const MenuItem = ({
 }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
+  const [borderWidth, setBorderWidth] = useState('2px');
+  const [borderOffset, setBorderOffset] = useState('1');
 
-  const borderWidth = variant === 'header' ? '2px' : '1px';
-  const borderOffset = variant === 'header' ? '1' : '[2px]';
+  useEffect(() => {
+    setBorderWidth(variant === 'header' ? '2px' : '1px');
+    setBorderOffset(variant === 'header' ? '1' : '2px');
+  }, [variant]);
 
   return (
     <li className='relative group'>
@@ -29,7 +34,7 @@ const MenuItem = ({
               ? 'bg-[linear-gradient(#29a0a5_0_0)]'
               : 'bg-[linear-gradient(#eec088_0_0)]'
           }
-           bg-[length:0%_${borderWidth}] bg-no-repeat bg-[position:0_100%] 
+           bg-[length:0%_2px] bg-no-repeat bg-[position:0_100%] 
           transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s] 
           hover:bg-[length:100%_${borderWidth}] hover:bg-[position:100%_100%] hover:text-white ${
           isActive

@@ -14,28 +14,24 @@ const CtaSection = () => {
       ref={ref}
       className='my-32 px-10 py-56 relative flex flex-col items-center justify-center max-w-8xl mx-auto'
     >
-      <Image
-        src={ctaImage1}
-        alt='cta'
-        width={400}
-        height={400}
-        className={`absolute top-8 left-0 object-cover max-h-[400px] transition-all duration-1000 ease-in-out ${
+      <div
+        className={`absolute top-8 left-0 w-[400px] h-[400px]  max-h-[400px] transition-all duration-1000 ease-in-out ${
           inView
             ? 'translate-x-0 opacity-100 visible'
             : '-translate-x-80 opacity-0 invisible'
         }`}
-      />
-      <Image
-        src={ctaImage2}
-        alt='cta'
-        width={400}
-        height={400}
-        className={`absolute bottom-8 right-0 object-cover max-h-[400px] transition-all duration-1000 ease-in-out ${
+      >
+        <Image src={ctaImage1} alt='cta' fill className='object-cover' />
+      </div>
+      <div
+        className={`absolute bottom-8 right-0 w-80 h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-1000 ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible'
             : '-translate-y-80 opacity-0 invisible'
         }`}
-      />
+      >
+        <Image src={ctaImage2} alt='cta' fill className='object-cover' />
+      </div>
       <h2
         className={`text-5xl underlined tworows text-center transition-all duration-1000 ease-in-out ${
           inView
@@ -43,9 +39,10 @@ const CtaSection = () => {
             : 'translate-y-80 opacity-0 invisible'
         }`}
       >
-        Zakoračite u svet savršenog osmeha - zakažite online
+        Zakoračite u svet savršenog osmeha
+        {/* - zakažite online
         <br />
-        pregled i krenite ka svom Hollywood Smile-u već danas!
+        pregled i krenite ka svom Hollywood Smile-u već danas! */}
       </h2>
       <p
         ref={ref}
@@ -55,7 +52,7 @@ const CtaSection = () => {
             : 'translate-y-80 opacity-0 invisible'
         }`}
       >
-        Ukoliko imate bilo kva pitanja slobodno nas kontaktirajte!
+        Ukoliko imate bilo kakva pitanja slobodno nas kontaktirajte!
       </p>
       <Button
         href='/kontakt'
