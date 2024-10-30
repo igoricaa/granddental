@@ -38,7 +38,7 @@ const ServiceItem = ({
     <article
       id={id}
       ref={ref}
-      className={`flex items-center justify-center mt-40 ${
+      className={`flex items-center justify-center mt-40 scroll-m-60 ${
         invert ? 'flex-row-reverse' : ''
       } ${className}`}
     >

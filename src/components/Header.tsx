@@ -51,7 +51,7 @@ const Header = () => {
         </ul>
       </div>
       <div className='flex items-center gap-12'>
-        <Button href='/kontakt'>Zakažite pregled</Button>
+        <Button variant='accented' href='/kontakt'>Zakažite pregled</Button>
         <BurgerMenu />
       </div>
     </header>
