@@ -30,3 +30,47 @@ export const routes = [
     href: '/kontakt',
   },
 ];
+
+export type TeamMemberType = {
+  name: string;
+  image: string;
+};
+
+export const team: TeamMemberType[] = [
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+  {
+    name: 'dr Bojan Perduv',
+    image: '/team/bojan-perduv.jpeg',
+  },
+];

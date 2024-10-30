@@ -1,7 +1,13 @@
-const Subtitle = ({ children }: { children: React.ReactNode }) => {
+const Subtitle = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <span
-      className={`uppercase text-sm  px-2 py-2 text-white bg-accent-default`}
+      className={`uppercase text-sm px-2 py-2 text-white bg-accent-default ${className}`}
     >
       {children}
     </span>

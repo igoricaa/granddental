@@ -38,7 +38,7 @@ const DentalTourismSection = () => {
         }`}
       >
         <Subtitle>Dentalni turizam</Subtitle>
-        <h2 className='text-5xl underlined mt-4'>Dentalni turizam</h2>
+        <h2 className='text-5xl underlined mt-5'>Dentalni turizam</h2>
         <div className='flex gap-8 items-start mt-6'>
           <div>
             <p>

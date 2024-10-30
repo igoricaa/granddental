@@ -12,7 +12,7 @@ const AboutSection = () => {
   return (
     <section
       ref={ref}
-      className=' mx-auto py-32 flex justify-center items-center gap-16 px-8 overflow-hidden'
+      className='mx-auto py-32 flex justify-center items-center gap-16 px-8 overflow-hidden'
     >
       <div
         className={`max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
@@ -34,7 +34,7 @@ const AboutSection = () => {
         }`}
       >
         <Subtitle>O nama</Subtitle>
-        <h2 className='mt-8 text-4xl underlined'>
+        <h2 className='mt-5 text-4xl underlined'>
           Ko smo mi i zašto nas birate?
         </h2>
         <p className='mt-8'>
