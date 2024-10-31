@@ -26,24 +26,40 @@ const MenuItem = ({
 
   return (
     <li className='relative group'>
-      <Link
-        href={href}
-        className={`relative inline-block text-[14px] text-white/50 uppercase tracking-[0.05em] pb-${borderOffset} pb- z-5
-          ${
-            variant === 'header'
-              ? 'bg-[linear-gradient(#29a0a5_0_0)]'
-              : 'bg-[linear-gradient(#eec088_0_0)]'
-          }
-           bg-[length:0%_2px] bg-no-repeat bg-[position:0_100%] 
-          transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s] 
-          hover:bg-[length:100%_${borderWidth}] hover:bg-[position:100%_100%] hover:text-white ${
-          isActive
-            ? `hover:bg-[length:100%_${borderWidth}] [&]:bg-[length:100%_${borderWidth}] !text-white`
-            : ''
-        }`}
-      >
-        {name}
-      </Link>
+      {submenu ? (
+        <span
+          className={`relative inline-block text-[14px] text-white/50 uppercase tracking-[0.05em] pb-${borderOffset} pb- z-5
+            ${
+              variant === 'header'
+                ? 'bg-[linear-gradient(#29a0a5_0_0)]'
+                : 'bg-[linear-gradient(#eec088_0_0)]'
+            }
+             bg-[length:0%_2px] bg-no-repeat bg-[position:0_100%] 
+            transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s] 
+            hover:bg-[length:100%_${borderWidth}] hover:bg-[position:100%_100%] hover:text-white`}
+        >
+          {name}
+        </span>
+      ) : (
+        <Link
+          href={href}
+          className={`relative inline-block text-[14px] text-white/50 uppercase tracking-[0.05em] pb-${borderOffset} pb- z-5
+            ${
+              variant === 'header'
+                ? 'bg-[linear-gradient(#29a0a5_0_0)]'
+                : 'bg-[linear-gradient(#eec088_0_0)]'
+            }
+             bg-[length:0%_2px] bg-no-repeat bg-[position:0_100%] 
+            transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s] 
+            hover:bg-[length:100%_${borderWidth}] hover:bg-[position:100%_100%] hover:text-white ${
+            isActive
+              ? `hover:bg-[length:100%_${borderWidth}] [&]:bg-[length:100%_${borderWidth}] !text-white`
+              : ''
+          }`}
+        >
+          {name}
+        </Link>
+      )}
 
       {submenu && (
         <>

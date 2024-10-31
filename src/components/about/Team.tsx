@@ -1,26 +1,25 @@
 'use client';
 
 import { team } from '@/app/data';
-import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import Subtitle from '../UI/Subtitle';
 import TeamMember from './TeamMember';
 
 const Team = () => {
   const { ref: headerRef, inView: headerInView } = useInView({
-    threshold: 0.1,
+    threshold: 0.5,
     triggerOnce: true,
   });
 
   return (
-    <div className='mt-32'>
-      <div ref={headerRef} className='max-w-3xl'>
+    <div className='py-32'>
+      <div ref={headerRef} className='max-w-3xl mx-auto flex flex-col items-center'>
         <Subtitle
           className={`${
             headerInView
               ? 'translate-y-0 opacity-100 visible'
               : 'translate-y-20 opacity-0 invisible'
-          } transition-all duration-1000 ease-in-out`}
+          } transition-all duration-700 ease-in-out`}
         >
           Znanje i iskustvo
         </Subtitle>
@@ -29,7 +28,7 @@ const Team = () => {
             headerInView
               ? 'translate-y-0 opacity-100 visible'
               : 'translate-y-20 opacity-0 invisible'
-          } transition-all duration-1000 ease-in-out`}
+          } transition-all duration-700 ease-in-out`}
         >
           Naš tim
         </h2>
@@ -38,7 +37,7 @@ const Team = () => {
             headerInView
               ? 'translate-y-0 opacity-100 visible'
               : 'translate-y-20 opacity-0 invisible'
-          } transition-all duration-1000 delay-200 ease-in-out`}
+          } transition-all duration-700 ease-in-out`}
         >
           Grand Dental Clinic je tim stručnjaka sa dugogodišnjim iskustvom u
           stomatologiji. Naš tim čine stručnjaci iz različitih oblasti
@@ -47,7 +46,7 @@ const Team = () => {
         </p>
       </div>
 
-      <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16'>
+      <div className='grid sm:grid-cols-2 lg:grid-cols-3 max-w-8xl mx-auto gap-8 mt-16'>
         {team.map((member, index) => (
           <TeamMember key={index} member={member} index={index} />
         ))}

@@ -1,5 +1,6 @@
 import Bojan from '@/components/about/Bojan';
 import Team from '@/components/about/Team';
+import CtaSection from '@/components/CtaSection';
 import Subtitle from '@/components/UI/Subtitle';
 
 const About = () => {
@@ -36,8 +37,8 @@ const About = () => {
       </div>
 
       <Bojan />
-
       <Team />
+      <CtaSection />
     </main>
   );
 };

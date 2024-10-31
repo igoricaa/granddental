@@ -18,7 +18,7 @@ const Bojan = () => {
           inView
             ? 'translate-y-0 opacity-100 visible'
             : 'translate-y-80 opacity-0 invisible'
-        } transition-all duration-[1500ms] ease-in-out`}
+        } transition-all duration-1000 ease-in-out`}
       >
         <Subtitle>glavni lik</Subtitle>
         <h2 className='text-4xl mt-5 underlined text-white'>dr Bojan Perduv</h2>
@@ -46,7 +46,7 @@ const Bojan = () => {
           inView
             ? '-translate-y-10 opacity-100 visible'
             : 'translate-y-80 opacity-0 invisible'
-        } transition-all duration-[1500ms] delay-[400ms] ease-in-out`}
+        } transition-all duration-1000 delay-[400ms] ease-in-out`}
       >
         <Image
           src={bojan}

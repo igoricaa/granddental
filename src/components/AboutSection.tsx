@@ -15,7 +15,7 @@ const AboutSection = () => {
       className='mx-auto py-32 flex justify-center items-center gap-16 px-8 overflow-hidden'
     >
       <div
-        className={`max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
+        className={`max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-1000 ease-in-out ${
           inView ? 'translate-y-0 opacity-100' : 'translate-y-64 opacity-0'
         }`}
       >
@@ -29,7 +29,7 @@ const AboutSection = () => {
 
       <div
         ref={ref}
-        className={`max-w-2xl flex-1 transition-all duration-[1500ms] ease-in-out ${
+        className={`max-w-2xl flex-1 transition-all duration-1000 ease-in-out ${
           inView ? 'translate-x-0 opacity-100' : 'translate-x-80 opacity-0'
         }`}
       >
