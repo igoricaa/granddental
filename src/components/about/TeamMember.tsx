@@ -1,6 +1,6 @@
 'use client';
 
-import { TeamMemberType } from '@/app/data';
+import { TeamMemberType } from '@/app/utils/data';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 

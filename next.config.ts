@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  env: {
+    GOOGLE_MAPS_API_KEY: 'AIzaSyBQlagxaq90oXM_y4WjMw0_MsqoxPm-zAg',
+  },
 };
 
 export default nextConfig;

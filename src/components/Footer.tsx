@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logo from '@/../public/logos/logo.png';
-import { routes } from '@/app/data';
+import { routes } from '@/app/utils/data';
 import MenuItem from './MenuItem';
 import { Link } from 'next-view-transitions';
 

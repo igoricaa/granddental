@@ -3,7 +3,7 @@ import logo from '@/../public/logos/logo.png';
 import Button from './UI/Button';
 import MenuItem from './MenuItem';
 import BurgerMenu from './BurgerMenu';
-import { routes } from '@/app/data';
+import { routes } from '@/app/utils/data';
 
 const Header = () => {
   return (

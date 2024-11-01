@@ -6,6 +6,7 @@ const Button = ({
   className,
   variant = 'primary',
   externalLink,
+  type = 'button',
   ...props
 }: {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const Button = ({
   className?: string;
   variant?: 'primary' | 'secondary' | 'accented';
   externalLink?: boolean;
+  type?: 'button' | 'submit';
 }) => {
   const commonProps = {
     className: ` w-fit px-8 py-4 block transition-colors duration-300 text-nowrap font-brandonBold  ${
@@ -36,7 +38,9 @@ const Button = ({
       </Link>
     )
   ) : (
-    <button {...commonProps}>{children}</button>
+    <button type={type} {...commonProps}>
+      {children}
+    </button>
   );
 
   return buttonElement;

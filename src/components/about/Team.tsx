@@ -1,6 +1,6 @@
 'use client';
 
-import { team } from '@/app/data';
+import { team } from '@/app/utils/data';
 import { useInView } from 'react-intersection-observer';
 import Subtitle from '../UI/Subtitle';
 import TeamMember from './TeamMember';
