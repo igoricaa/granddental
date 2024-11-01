@@ -33,7 +33,7 @@ const Button = ({
         {children}
       </a>
     ) : (
-      <Link href={href} {...commonProps}>
+      <Link href={href} {...commonProps} scroll={true}>
         {children}
       </Link>
     )

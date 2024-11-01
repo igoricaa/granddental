@@ -23,7 +23,7 @@ export const routes = [
   },
   {
     name: 'Dentalni turizam',
-    href: '/dentalni-turizam',
+    href: '/#dentalni-turizam',
   },
   {
     name: 'Kontakt',
