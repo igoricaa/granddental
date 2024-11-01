@@ -1,10 +1,25 @@
+'use client';
+
+import { useInView } from 'react-intersection-observer';
 import Subtitle from '../UI/Subtitle';
 
 const Intro = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div
+      ref={ref}
+      className={`max-w-7xl mx-auto ${
+        inView
+          ? 'opacity-100 visible translate-y-0'
+          : 'opacity-0 invisible translate-y-20'
+      } transition-all duration-1000 ease-in-out`}
+    >
       <Subtitle>O nama</Subtitle>
-      <h1 className='text-4xl mt-5'>Ko smo mi?</h1>
+      <h1 className='text-4xl mt-5 underlined'>Ko smo mi?</h1>
       <div className='flex gap-16 justify-between mt-8'>
         <p className='bg-primary-default px-8 py-8 text-black'>
           U Grand Dentalu posvećeni smo vrhunskoj stomatološkoj nezi koja
