@@ -7,16 +7,25 @@ import Subtitle from './UI/Subtitle';
 import { useInView } from 'react-intersection-observer';
 
 const AboutSection = () => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+  const { ref: imageRef, inView: imageInView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   return (
     <section
-      ref={ref}
-      className='mx-auto py-32 flex justify-center items-center gap-16 px-8 overflow-hidden'
+      ref={imageRef}
+      className='mx-auto py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row justify-center items-center gap-16 px-4 md:px-8 overflow-hidden'
     >
       <div
-        className={`max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
-          inView ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-64 opacity-0 blur-[2px]'
+        className={`w-full lg:max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
+          imageInView
+            ? 'translate-y-0 opacity-100 blur-0'
+            : 'translate-y-64 opacity-0 blur-[2px]'
         }`}
       >
         <Image
@@ -28,9 +37,11 @@ const AboutSection = () => {
       </div>
 
       <div
-        ref={ref}
-        className={`max-w-2xl flex-1 transition-all duration-[1500ms] ease-in-out ${
-          inView ? 'translate-x-0 opacity-100 blur-0' : 'translate-x-80 opacity-0 blur-[2px]'
+        ref={textRef}
+        className={`lg:max-w-2xl flex-1 transition-all duration-[1500ms] ease-in-out ${
+          textInView
+            ? `translate-y-0 lg:translate-x-0 opacity-100 blur-0`
+            : `translate-y-80 lg:translate-x-80 opacity-0 blur-[2px]`
         }`}
       >
         <Subtitle>O nama</Subtitle>

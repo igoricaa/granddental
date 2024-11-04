@@ -40,10 +40,10 @@ const ServicesSection = () => {
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
 
   return (
-    <section className='py-32 px-16 overflow-hidden '>
+    <section className='py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-16 overflow-hidden '>
       <div
         ref={ref}
-        className={`max-w-8xl mx-auto flex gap-12 items-center px-16 transition-all duration-[1500ms] ease-in-out ${
+        className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-5 lg:gap-12 lg:items-center lg:px-16 transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-32 opacity-0 invisible blur-[2px]'
@@ -60,7 +60,7 @@ const ServicesSection = () => {
       </div>
 
       <ServiceItem {...services.protetika} />
-      <ServiceItem {...services.implantologija} invert className='mt-56' />
+      <ServiceItem {...services.implantologija} invert className='lg:mt-56' />
     </section>
   );
 };

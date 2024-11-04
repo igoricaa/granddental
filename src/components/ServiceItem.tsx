@@ -38,14 +38,14 @@ const ServiceItem = ({
     <article
       id={id}
       ref={ref}
-      className={`flex items-center justify-center mt-40 scroll-m-60 ${
-        invert ? 'flex-row-reverse' : ''
+      className={`flex flex-col lg:flex-row gap-8 lg:gap-0 lg:items-center justify-center mt-16 md:mt-24 lg:mt-40 scroll-m-60 ${
+        invert ? 'lg:flex-row-reverse' : ''
       } ${className}`}
     >
       <div
         className={`flex flex-col justify-center items-start bg-primary-default ${
-          invert ? 'pr-16 pl-32' : 'pl-16 pr-32'
-        } py-16 w-[50vw] max-w-5xl min-w-[600px] min-h-[560px] text-textDark ${
+          invert ? 'px-4 lg:pr-16 lg:pl-32' : 'px-4 lg:pl-16 lg:pr-32'
+        } py-16 lg:w-[50vw] max-w-5xl lg:min-w-[600px] lg:min-h-[560px] text-textDark ${
           inView
             ? 'translate-x-0 opacity-100 visible blur-0'
             : `${
@@ -55,9 +55,9 @@ const ServiceItem = ({
       >
         <Subtitle>{subtitle}</Subtitle>
         <h3 className='text-4xl text-white mt-5 underlined'>{title}</h3>
-        <p className='mt-8'>{description1}</p>
-        {description2 && <p className='mt-6'>{description2}</p>}
-        {description3 && <p className='mt-6'>{description3}</p>}
+        <p className='mt-4 lg:mt-8'>{description1}</p>
+        {description2 && <p className='mt-4 lg:mt-6'>{description2}</p>}
+        {description3 && <p className='mt-4 lg:mt-6'>{description3}</p>}
 
         <Button href='/kontakt' variant='secondary' className='mt-8'>
           {buttonText}
@@ -65,8 +65,8 @@ const ServiceItem = ({
       </div>
 
       <div
-        className={`relative z-10 flex-1 aspect-[700/467] min-w-[600px] max-w-[700px] group transition-all duration-[1500ms] ease-in-out overflow-hidden ${
-          invert ? 'translate-x-24' : '-translate-x-24'
+        className={`relative z-10 flex-1 aspect-[700/467] lg:min-w-[600px] lg:max-w-[700px] group transition-all duration-[1500ms] ease-in-out overflow-hidden ${
+          invert ? 'lg:translate-x-24' : 'lg:-translate-x-24'
         } ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
