@@ -14,9 +14,9 @@ const Intro = () => {
       ref={ref}
       className={`max-w-7xl mx-auto ${
         inView
-          ? 'opacity-100 visible translate-y-0'
-          : 'opacity-0 invisible translate-y-20'
-      } transition-all duration-1000 ease-in-out`}
+          ? 'opacity-100 visible translate-y-0 blur-0'
+          : 'opacity-0 invisible translate-y-20 blur-[2px]'
+      } transition-all duration-[1500ms] ease-in-out`}
     >
       <Subtitle>O nama</Subtitle>
       <h1 className='text-4xl mt-5 underlined'>Ko smo mi?</h1>

@@ -12,7 +12,7 @@ const DentalTourismSection = () => {
 
   return (
     <section
-    id='dentalni-turizam'
+      id='dentalni-turizam'
       ref={ref}
       className='my-32 px-20 pt-40 pb-20 h-[600px] relative flex items-center gap-10 overflow-hidden scroll-mt-60'
     >
@@ -34,8 +34,10 @@ const DentalTourismSection = () => {
 
       <div
         ref={ref}
-        className={`max-w-screen-xl transition-all duration-1000 ease-in-out ${
-          inView ? 'translate-y-0 opacity-100 visible' : 'translate-y-16 opacity-0 invisible'
+        className={`max-w-screen-xl transition-all duration-[1500ms] ease-in-out ${
+          inView
+            ? 'translate-y-0 opacity-100 visible blur-0'
+            : 'translate-y-16 opacity-0 invisible blur-[2px]'
         }`}
       >
         <Subtitle>Dentalni turizam</Subtitle>

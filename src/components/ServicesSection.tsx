@@ -43,10 +43,10 @@ const ServicesSection = () => {
     <section className='py-32 px-16 overflow-hidden '>
       <div
         ref={ref}
-        className={`max-w-8xl mx-auto flex gap-12 items-center px-16 transition-all duration-1000 ease-in-out ${
+        className={`max-w-8xl mx-auto flex gap-12 items-center px-16 transition-all duration-[1500ms] ease-in-out ${
           inView
-            ? 'translate-y-0 opacity-100 visible'
-            : 'translate-y-32 opacity-0 invisible'
+            ? 'translate-y-0 opacity-100 visible blur-0'
+            : 'translate-y-32 opacity-0 invisible blur-[2px]'
         }`}
       >
         <h2 className='text-6xl text-nowrap text-primary-default'>

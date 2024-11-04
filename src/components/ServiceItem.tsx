@@ -47,10 +47,10 @@ const ServiceItem = ({
           invert ? 'pr-16 pl-32' : 'pl-16 pr-32'
         } py-16 w-[50vw] max-w-5xl min-w-[600px] min-h-[560px] text-textDark ${
           inView
-            ? 'translate-x-0 opacity-100 visible'
+            ? 'translate-x-0 opacity-100 visible blur-0'
             : `${
                 invert ? 'translate-x-80' : '-translate-x-80'
-              } opacity-0 invisible`
+              } opacity-0 invisible blur-[2px]`
         } transition-all duration-[1500ms] ease-in-out`}
       >
         <Subtitle>{subtitle}</Subtitle>
@@ -65,12 +65,12 @@ const ServiceItem = ({
       </div>
 
       <div
-        className={`relative z-10 flex-1 aspect-[700/467] min-w-[600px] max-w-[700px] group transition-all duration-1000 ease-in-out overflow-hidden ${
+        className={`relative z-10 flex-1 aspect-[700/467] min-w-[600px] max-w-[700px] group transition-all duration-[1500ms] ease-in-out overflow-hidden ${
           invert ? 'translate-x-24' : '-translate-x-24'
         } ${
           inView
-            ? 'translate-y-0 opacity-100 visible'
-            : 'translate-y-80 opacity-0 invisible'
+            ? 'translate-y-0 opacity-100 visible blur-0'
+            : 'translate-y-80 opacity-0 invisible blur-[2px]'
         }`}
       >
         <Image

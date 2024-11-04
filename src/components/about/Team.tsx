@@ -17,9 +17,9 @@ const Team = () => {
         <Subtitle
           className={`${
             headerInView
-              ? 'translate-y-0 opacity-100 visible'
-              : 'translate-y-20 opacity-0 invisible'
-          } transition-all duration-700 ease-in-out`}
+              ? 'translate-y-0 opacity-100 visible blur-0'
+              : 'translate-y-20 opacity-0 invisible blur-[2px]'
+          } transition-all duration-[1500ms] ease-in-out`}
         >
           Znanje i iskustvo
         </Subtitle>
@@ -27,8 +27,8 @@ const Team = () => {
           className={`text-4xl mt-5 underlined ${
             headerInView
               ? 'translate-y-0 opacity-100 visible'
-              : 'translate-y-20 opacity-0 invisible'
-          } transition-all duration-700 ease-in-out`}
+              : 'translate-y-20 opacity-0 invisible blur-[2px]'
+          } transition-all duration-[1500ms] ease-in-out`}
         >
           Naš tim
         </h2>
@@ -36,8 +36,8 @@ const Team = () => {
           className={`mt-8 bg-primary-default px-4 py-4 text-black ${
             headerInView
               ? 'translate-y-0 opacity-100 visible'
-              : 'translate-y-20 opacity-0 invisible'
-          } transition-all duration-700 ease-in-out`}
+              : 'translate-y-20 opacity-0 invisible blur-[2px]'
+          } transition-all duration-[1500ms] ease-in-out`}
         >
           Grand Dental Clinic je tim stručnjaka sa dugogodišnjim iskustvom u
           stomatologiji. Naš tim čine stručnjaci iz različitih oblasti

@@ -4,7 +4,7 @@ import heroImage from '@/../public/hero.png';
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-[80svh] flex flex-col justify-end pt-0 px-44 pb-24 text-white'>
+    <section className='relative w-full h-[80svh] flex flex-col justify-end pt-0 px-4 md:px-16 md:pb-40 lg:px-44 lg:pb-24 text-white'>
       <Image
         src={heroImage}
         alt='Grand Dental klinika'

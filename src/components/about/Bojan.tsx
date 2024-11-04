@@ -16,9 +16,9 @@ const Bojan = () => {
       <div
         className={`lg:col-span-6 lg:col-start-2 max-w-7xl bg-primary-default text-black px-12 py-12 h-fit z-10 ${
           inView
-            ? 'translate-y-0 opacity-100 visible'
-            : 'translate-y-80 opacity-0 invisible'
-        } transition-all duration-1000 ease-in-out`}
+            ? 'translate-y-0 opacity-100 visible blur-0'
+            : 'translate-y-80 opacity-0 invisible blur-[2px]'
+        } transition-all duration-[1500ms] ease-in-out`}
       >
         <Subtitle>glavni lik</Subtitle>
         <h2 className='text-4xl mt-5 underlined text-white'>dr Bojan Perduv</h2>
@@ -44,9 +44,9 @@ const Bojan = () => {
       <div
         className={`relative lg:col-span-5 lg:col-start-8 lg:min-h-[800px] -translate-x-20 ${
           inView
-            ? '-translate-y-10 opacity-100 visible'
-            : 'translate-y-80 opacity-0 invisible'
-        } transition-all duration-1000 delay-[400ms] ease-in-out`}
+            ? '-translate-y-10 opacity-100 visible blur-0'
+            : 'translate-y-80 opacity-0 invisible blur-[2px]'
+        } transition-all duration-[1500ms] delay-[400ms] ease-in-out`}
       >
         <Image
           src={bojan}

@@ -1,16 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/../public/logos/logo.png';
 
-interface SideAreaProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const SideArea = ({ isOpen, onClose }: SideAreaProps) => {
+const SideArea = () => {
   const [showCopyBanner, setShowCopyBanner] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('info@granddental.rs');
@@ -18,18 +14,55 @@ const SideArea = ({ isOpen, onClose }: SideAreaProps) => {
     setTimeout(() => setShowCopyBanner(false), 2000);
   };
 
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
+      <button
+        onClick={handleClick}
+        className='p-2 hover:opacity-70 transition-opacity relative z-50'
+      >
+        <div className='w-8 h-8 md:w-10 md:h-10 lg:w-6 lg:h-6 flex flex-col justify-center lg:gap-[6px] md:gap-[10px] gap-2'>
+          <span
+            className={`block w-full h-[2px] bg-current transition-transform duration-300 origin-center ${
+              isOpen
+                ? 'rotate-45 translate-y-[10px] md:translate-y-3 lg:translate-y-2'
+                : ''
+            }`}
+          />
+          <span
+            className={`block w-full h-[2px] bg-current transition-transform duration-300 ${
+              isOpen ? 'scale-0' : 'scale-100'
+            }`}
+          />
+          <span
+            className={`block w-full h-[2px] bg-current transition-transform duration-300 origin-center ${
+              isOpen
+                ? '-rotate-45 -translate-y-[10px] md:-translate-y-3 lg:-translate-y-2'
+                : ''
+            }`}
+          />
+        </div>
+      </button>
+
       <div
         className={`fixed top-0 right-0 w-full h-full bg-black transition-[opacity, visibility] duration-1000 z-[24] ${
           isOpen ? 'opacity-50 block' : 'opacity-0 invisible'
         }`}
-        onClick={onClose}
+        onClick={handleClick}
       />
 
       <div
-        className={`fixed top-0 right-0 z-[25] bg-background max-w-[537px] w-full h-screen transition-all duration-500 ease-in-out p-[10vh_4rem_2rem] ${
-          isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+        style={{
+          transitionProperty: 'transform, opacity, visibility, filter',
+          transitionDuration: '700ms, 500ms, 700ms, 500ms',
+        }}
+        className={`fixed top-0 right-0 z-[25] bg-background max-w-[537px] w-full h-screen transition-all ease-in-out p-[10vh_4rem_2rem] ${
+          isOpen
+            ? 'opacity-100 visible translate-x-0 blur-0'
+            : 'opacity-0 invisible translate-x-full blur-[2px]'
         }`}
       >
         <Link href='/' className='block w-36'>
