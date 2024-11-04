@@ -12,10 +12,10 @@ const CtaSection = () => {
   return (
     <section
       ref={ref}
-      className='my-32 px-10 py-56 relative flex flex-col items-center justify-center max-w-8xl mx-auto'
+      className='my-32 px-10 py-60 md:py-64 lg:py-56 relative flex flex-col items-center justify-center max-w-8xl mx-auto'
     >
       <div
-        className={`absolute -top-12 md:-top-16 lg:top-8 left-4 md:left-8 lg:left-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
+        className={`absolute -top-4 md:-top-16 lg:top-8 left-4 md:left-8 lg:left-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-x-0 opacity-100 visible blur-0'
             : '-translate-x-80 opacity-0 invisible blur-[2px]'
@@ -24,7 +24,7 @@ const CtaSection = () => {
         <Image src={ctaImage1} alt='cta' fill className='object-cover' />
       </div>
       <div
-        className={`absolute -bottom-12 md:-bottom-12 lg:bottom-8 right-4 md:right-8 lg:right-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
+        className={`absolute -bottom-4 md:-bottom-16 lg:bottom-8 right-4 md:right-8 lg:right-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : '-translate-y-80 opacity-0 invisible blur-[2px]'

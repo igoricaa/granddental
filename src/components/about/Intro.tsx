@@ -20,15 +20,15 @@ const Intro = () => {
     >
       <Subtitle>O nama</Subtitle>
       <h1 className='text-4xl mt-5 underlined'>Ko smo mi?</h1>
-      <div className='flex gap-16 justify-between mt-8'>
-        <p className='bg-primary-default px-8 py-8 text-black'>
+      <div className='flex flex-col md:flex-row gap-8 justify-between mt-8'>
+        <p className='bg-primary-default px-4 md:px-8 py-4 md:py-8 text-black'>
           U Grand Dentalu posvećeni smo vrhunskoj stomatološkoj nezi koja
           kombinuje stručnost, inovativne tehnike i najmoderniju opremu. Naš tim
           stručnjaka sa dugogodišnjim iskustvom u različitim oblastima
           stomatologije svakom pacijentu pristupa individualno, osiguravajući
           personalizovan plan lečenja koji odgovara vašim specifičnim potrebama.
         </p>
-        <p className='bg-primary-default px-8 py-8 text-black'>
+        <p className='bg-primary-default px-4 md:px-8 py-4 md:py-8 text-black'>
           {' '}
           Naša ordinacija se ponosi najnovijim tehnologijama i tehnikama koje
           garantuju besprekorne rezultate, bilo da je reč o estetskoj
@@ -40,7 +40,7 @@ const Intro = () => {
         </p>
       </div>
 
-      <h2 className='text-2xl px-8 py-8 bg-accent-default text-end mt-16 w-fit ml-auto'>
+      <h2 className='text-2xl px-4 md:px-8 py-6 md:py-8 bg-accent-default text-end mt-14 w-fit ml-auto'>
         "Stručnost, posvećenost, savršenstvo. Naš tim stvara osmehe koji menjaju
         živote."
       </h2>

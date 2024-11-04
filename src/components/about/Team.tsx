@@ -12,7 +12,7 @@ const Team = () => {
   });
 
   return (
-    <div className='py-32'>
+    <div className='py-16 md:24 lg:py-32'>
       <div ref={headerRef} className='max-w-3xl mx-auto flex flex-col items-center'>
         <Subtitle
           className={`${
@@ -46,7 +46,7 @@ const Team = () => {
         </p>
       </div>
 
-      <div className='grid sm:grid-cols-2 lg:grid-cols-3 max-w-8xl mx-auto gap-8 mt-16'>
+      <div className='grid grid-cols-2 md:grid-cols-3 max-w-8xl mx-auto gap-4 md:gap-8 mt-16'>
         {team.map((member, index) => (
           <TeamMember key={index} member={member} index={index} />
         ))}

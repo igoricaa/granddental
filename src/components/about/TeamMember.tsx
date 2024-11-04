@@ -36,7 +36,7 @@ const TeamMember = ({
           className='object-cover'
         />
       </div>
-      <h4 className='text-2xl mt-4 underlined !absolute bottom-8 right-8 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-in-out z-20'>
+      <h4 className='text-2xl mt-4 underlined !absolute bottom-6 right-4 lg:bottom-8 lg:right-8 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-in-out z-20'>
         {member.name}
       </h4>
     </div>
