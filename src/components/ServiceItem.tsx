@@ -55,7 +55,7 @@ const ServiceItem = ({
       >
         <Subtitle>{subtitle}</Subtitle>
         <h3 className='text-4xl text-white mt-5 underlined'>{title}</h3>
-        <p className='mt-4 lg:mt-8'>{description1}</p>
+        <p className='mt-6 lg:mt-8'>{description1}</p>
         {description2 && <p className='mt-4 lg:mt-6'>{description2}</p>}
         {description3 && <p className='mt-4 lg:mt-6'>{description3}</p>}
 
