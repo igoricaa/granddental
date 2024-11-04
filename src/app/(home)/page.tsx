@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ServicesSection />
-      {/* <BeforeAndAfter beforeImage={beforeImage} afterImage={afterImage} width={1000} height={600} /> */}
+      <BeforeAndAfter beforeImage={beforeImage} afterImage={afterImage}/>
       <DentalTourismSection />
       <CtaSection />
     </main>

@@ -8,8 +8,6 @@ import Subtitle from './UI/Subtitle';
 interface ImageComparisonProps {
   beforeImage: string | StaticImageData;
   afterImage: string | StaticImageData;
-  width: number;
-  height: number;
   initialPosition?: number;
   className?: string;
 }
@@ -22,8 +20,6 @@ interface Position {
 const ImageComparison: React.FC<ImageComparisonProps> = ({
   beforeImage,
   afterImage,
-  width,
-  height,
   initialPosition = 50,
   className = '',
 }) => {
@@ -76,22 +72,18 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
 
   return (
     <section
-      className={`flex flex-col items-center relative max-w-8xl mx-auto py-32 ${className}`}
+      className={`flex flex-col items-center relative max-w-8xl mx-auto px-4 md:px-8 lg:px-0 py-16 md:py-24 lg:py-32 ${className}`}
     >
       <Subtitle>Rezultati</Subtitle>
       <h2 className='text-5xl underlined mt-5'>Pre i posle nas</h2>
-      <p className='mt-6 text-2xl'>
+      <p className='mt-6 text-xl lg:text-2xl'>
         Pogledajte neke od primera naših radova i uverite se sami u kvalitet
         naših usluga.
       </p>
 
       <div
         ref={containerRef}
-        className='relative mx-auto select-none overflow-hidden bg-gray-100 mt-12'
-        style={{
-          width: width,
-          height: height,
-        }}
+        className='relative mx-auto select-none overflow-hidden bg-gray-100 mt-10 lg:mt-12 w-full h-full aspect-[1000/600] max-w-[1000px] max-h-[600px]'
         onTouchMove={handleTouchMove}
         onTouchEnd={() => setIsResizing(false)}
       >
@@ -103,7 +95,7 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
             priority
             fill
             className='object-cover'
-            sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+            sizes={`(max-width: 991px) 100vw, 1000px`}
           />
         </div>
 
@@ -118,7 +110,7 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
             priority
             fill
             className='object-cover'
-            sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+            sizes={`(max-width: 991px) 100vw, 1000px`}
           />
         </div>
 
