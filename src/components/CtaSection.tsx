@@ -15,7 +15,7 @@ const CtaSection = () => {
       className='my-32 px-10 py-56 relative flex flex-col items-center justify-center max-w-8xl mx-auto'
     >
       <div
-        className={`absolute top-8 left-0 w-[400px] h-[400px]  max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
+        className={`absolute -top-12 md:-top-16 lg:top-8 left-4 md:left-8 lg:left-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-x-0 opacity-100 visible blur-0'
             : '-translate-x-80 opacity-0 invisible blur-[2px]'
@@ -24,7 +24,7 @@ const CtaSection = () => {
         <Image src={ctaImage1} alt='cta' fill className='object-cover' />
       </div>
       <div
-        className={`absolute bottom-8 right-0 w-80 h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
+        className={`absolute -bottom-12 md:-bottom-12 lg:bottom-8 right-4 md:right-8 lg:right-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : '-translate-y-80 opacity-0 invisible blur-[2px]'
@@ -46,7 +46,7 @@ const CtaSection = () => {
       </h2>
       <p
         ref={ref}
-        className={`mt-10 text-2xl transition-all duration-[1500ms] ease-in-out ${
+        className={`text-center mt-6 md:mt-6 lg:mt-10 text-2xl transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
@@ -56,7 +56,7 @@ const CtaSection = () => {
       </p>
       <Button
         href='/kontakt'
-        className={`mx-auto mt-12 !transition-all !duration-[1500ms] ease-in-out ${
+        className={`mx-auto mt-8 md:mt-10 lg:mt-12 !transition-all !duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
