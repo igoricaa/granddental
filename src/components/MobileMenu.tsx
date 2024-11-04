@@ -59,6 +59,7 @@ const MobileMenu = () => {
                 index={index}
                 isSubmenuOpen={isSubmenuOpen}
                 setIsSubmenuOpen={setIsSubmenuOpen}
+                variant='mobilemenu'
                 {...route}
               />
             ))}

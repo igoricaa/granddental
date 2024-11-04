@@ -4,14 +4,25 @@ import { Link } from 'next-view-transitions';
 import { usePathname } from 'next/navigation';
 
 const BASE_LINK_STYLES = `
-  relative inline-block text-2xl md:text-5xl lg:text-[14px] text-white/50 uppercase tracking-[0.05em] mt-4 md:mt-6 lg:mt-0 pb-1 z-5
+  relative inline-block text-white/50 uppercase tracking-[0.05em] pb-1 z-5
   bg-[length:0%_2px] bg-no-repeat bg-[position:0_100%]
-  transition-[background-size,background-position,color, max-height] duration-300 delay-[0s,0.3s, 0s, 0s]
+  transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s, 0s]
   hover:bg-[length:100%_2px] hover:bg-[position:100%_100%] hover:text-white
 `;
 
-const getGradientStyle = (variant: 'header' | 'footer') =>
-  variant === 'header'
+const HEADER_LINK_STYLES = `text-[14px] text-white/50 pb-1 z-5
+  transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s, 0s]
+  hover:bg-[length:100%_2px] hover:bg-[position:100%_100%] hover:text-white`;
+
+const FOOTER_LINK_STYLES = `text-base lg:text-[14px] text-white/50 mt-0 lg:mt-0 pb-1 z-5
+  transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s, 0s]
+  `;
+
+const MOBILE_MENU_LINK_STYLES = `text-2xl md:text-5xl lg:text-[14px] text-white/50 mt-4 md:mt-6 lg:mt-0 pb-1 z-5
+  transition-[background-size,background-position,color, max-height] duration-300 delay-[0s,0.3s, 0s, 0s]`;
+
+const getGradientStyle = (variant: 'header' | 'footer' | 'mobilemenu') =>
+  variant === 'header' || variant === 'mobilemenu'
     ? 'bg-[linear-gradient(#29a0a5_0_0)]'
     : 'bg-[linear-gradient(#eec088_0_0)]';
 
@@ -21,7 +32,7 @@ const SubMenuItem = ({
   pathname,
 }: {
   item: { name: string; href: string };
-  variant: 'header' | 'footer';
+  variant: 'header' | 'footer' | 'mobilemenu';
   pathname: string;
 }) => (
   <li key={item.href}>
@@ -30,7 +41,7 @@ const SubMenuItem = ({
       className={`
       relative inline-block py-1 text-xs uppercase tracking-wider
       ${
-        variant === 'header'
+        variant === 'header' || variant === 'mobilemenu'
           ? 'text-white bg-[linear-gradient(#fff_0_0)]'
           : 'bg-[linear-gradient(#eec088_0_0)] text-white/50 hover:text-white'
       }
@@ -62,7 +73,7 @@ const MenuItem = ({
   name: string;
   href: string;
   submenu?: { name: string; href: string }[];
-  variant?: 'header' | 'footer';
+  variant?: 'header' | 'footer' | 'mobilemenu';
   isVisible?: boolean;
   index?: number;
   isSubmenuOpen?: boolean;
@@ -87,20 +98,31 @@ const MenuItem = ({
         }s, ${(index || 0) * 0.2}s`,
       }}
       className={`relative group ${
-        isMobile
-          ? `transition-[max-height,opacity,visibility,transform,blur] ease-[cubic-bezier(0.76, 0, 0.24, 1)]  ${
-              isVisible
-                ? 'opacity-100 visible translate-y-0 blur-0 duration-500'
-                : 'opacity-0 invisible translate-y-20 blur-[2px] duration-1000'
+        variant === 'mobilemenu' &&
+        `transition-[max-height,opacity,visibility,transform,blur] ease-[cubic-bezier(0.76, 0, 0.24, 1)]  ${
+          isVisible
+            ? 'opacity-100 visible translate-y-0 blur-0 duration-500'
+            : 'opacity-0 invisible translate-y-20 blur-[2px] duration-1000'
+        }
+            ${
+              submenu
+                ? isSubmenuOpen
+                  ? 'max-h-[120px] md:max-h-[152px]'
+                  : 'max-h-[52px] md:max-h-[76px]'
+                : ''
             }
-            ${submenu ? (isSubmenuOpen ? 'max-h-[120px]' : 'max-h-[52px]') : ''}
             `
-          : ''
       }`}
     >
       {submenu ? (
         <span
-          className={`${BASE_LINK_STYLES} ${gradientStyle} cursor-pointer`}
+          className={`${
+            variant === 'mobilemenu'
+              ? MOBILE_MENU_LINK_STYLES
+              : variant === 'footer'
+              ? FOOTER_LINK_STYLES
+              : HEADER_LINK_STYLES
+          } ${BASE_LINK_STYLES} ${gradientStyle} cursor-pointer`}
           onClick={handleSubmenuClick}
         >
           {name}
@@ -109,12 +131,18 @@ const MenuItem = ({
         <Link
           href={href}
           className={`
+          ${
+            variant === 'mobilemenu'
+              ? MOBILE_MENU_LINK_STYLES
+              : variant === 'footer'
+              ? FOOTER_LINK_STYLES
+              : HEADER_LINK_STYLES
+          }
           ${BASE_LINK_STYLES}
           ${gradientStyle}
           ${
-            isActive
-              ? 'hover:bg-[length:100%_2px] [&]:bg-[length:100%_2px] !text-white'
-              : ''
+            isActive &&
+            'hover:bg-[length:100%_2px] [&]:bg-[length:100%_2px] !text-white'
           }
         `}
         >
@@ -124,14 +152,14 @@ const MenuItem = ({
 
       {submenu && (
         <>
-          {variant === 'header' && !isMobile && (
+          {variant === 'header' && (
             <div className='absolute h-4 w-full -bottom-4' />
           )}
           <ul
             className={`
-              ${variant === 'header' && !isMobile ? 'absolute hidden mt-1' : ''}
+              ${variant === 'header' && 'absolute hidden mt-1'}
               ${
-                isMobile
+                variant === 'mobilemenu'
                   ? `mt-2 transition-all ${
                       isSubmenuOpen
                         ? 'opacity-100 visible duration-500 delay-150'
