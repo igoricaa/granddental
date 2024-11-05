@@ -66,7 +66,7 @@ const ServiceItem = ({
         <Button
           href='/kontakt'
           variant='secondary'
-          className={`${invert && 'ml-auto'} mt-8`}
+          className={`${invert && 'ml-auto lg:ml-0'} mt-8`}
         >
           {buttonText}
         </Button>
@@ -78,7 +78,9 @@ const ServiceItem = ({
           transitionDuration: '1500ms, 1000ms, 1000ms',
         }}
         className={`relative z-10 flex-1 aspect-[700/467] w-full max-w-[256px] md:max-w-[400px] lg:min-w-[600px] lg:max-w-[700px] group ease-in-out overflow-hidden ${
-          invert ? 'lg:translate-x-24 mr-auto' : 'lg:-translate-x-24 ml-auto'
+          invert
+            ? 'mr-auto lg:mr-0 lg:translate-x-24'
+            : 'ml-auto lg:ml-0 lg:-translate-x-24'
         } ${
           inView
             ? '-translate-y-16 md:-translate-y-32 lg:translate-y-0 opacity-100 visible blur-0'
