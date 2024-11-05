@@ -32,7 +32,7 @@ const TeamMember = ({
           src={member.image}
           alt={member.name}
           fill
-          sizes='(max-width: 768px) 100vw, 33vw'
+          sizes='(max-width: 768px) 50vw,(max-width: 1440px) 33vw, 480px'
           className='object-cover'
         />
       </div>

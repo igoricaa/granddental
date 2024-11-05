@@ -19,7 +19,7 @@ const AboutSection = () => {
   return (
     <section
       ref={imageRef}
-      className='mx-auto py-16 md:py-24 lg:py-28 flex flex-col lg:flex-row justify-center items-center gap-16 px-4 md:px-8 overflow-hidden'
+      className='mx-auto py-16 md:py-24 lg:py-28 flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-12 lg:gap-16 px-4 md:px-8 overflow-hidden'
     >
       <div
         className={`w-full lg:max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
@@ -32,6 +32,7 @@ const AboutSection = () => {
           src={aboutImage}
           alt='Grand Dental Klinika - O nama'
           fill
+          sizes='(max-width: 1024px) 100vw, 672px'
           className='object-cover'
         />
       </div>

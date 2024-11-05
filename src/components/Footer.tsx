@@ -8,9 +8,15 @@ const Footer = () => {
   return (
     <footer className='justify-between px-8 md:px-16 lg:px-[10vw] py-16 md:py-20 lg:py-32 bg-accent-default'>
       <div className='flex flex-col lg:flex-row gap-16 lg:gap-32'>
-        <div className='w-40 h-40 lg:w-52 lg:h-52 relative'>
-          <Image src={logo} alt='logo' fill className='object-cover' />
-        </div>
+        <Link href='/' className='w-40 h-40 lg:w-52 lg:h-52 relative'>
+          <Image
+            src={logo}
+            alt='logo'
+            fill
+            sizes='(max-width: 1024px) 160px, 208px'
+            className='object-cover'
+          />
+        </Link>
         <div className='flex flex-row justify-between md:gap-8 lg:gap-32'>
           <div className='flex-1'>
             <h4 className='font-bold text-2xl lg:text-3xl uppercase'>Meni</h4>
@@ -21,7 +27,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className='flex-1'>
-            <h4 className='font-bold text-2xl lg:text-3xl uppercase'>Kontakt</h4>
+            <h4 className='font-bold text-2xl lg:text-3xl uppercase'>
+              Kontakt
+            </h4>
             <div className='relative w-fit'>
               <p className='mt-6 lg:mt-8 cursor-pointer hover:opacity-80'>
                 info@granddental.rs

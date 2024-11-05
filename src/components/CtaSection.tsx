@@ -21,7 +21,13 @@ const CtaSection = () => {
             : '-translate-x-80 opacity-0 invisible blur-[2px]'
         }`}
       >
-        <Image src={ctaImage1} alt='cta' fill className='object-cover' />
+        <Image
+          src={ctaImage1}
+          alt='cta'
+          fill
+          sizes='(max-width: 1024px) 256px, 400px'
+          className='object-cover'
+        />
       </div>
       <div
         className={`absolute -bottom-4 md:-bottom-16 lg:bottom-8 right-4 md:right-8 lg:right-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 2xl:w-[400px] 2xl:h-[400px] max-h-[400px] transition-all duration-[1500ms] ease-in-out ${
@@ -30,7 +36,13 @@ const CtaSection = () => {
             : '-translate-y-80 opacity-0 invisible blur-[2px]'
         }`}
       >
-        <Image src={ctaImage2} alt='cta' fill className='object-cover' />
+        <Image
+          src={ctaImage2}
+          alt='cta'
+          fill
+          sizes='(max-width: 1024px) 256px, 400px'
+          className='object-cover'
+        />
       </div>
       <h2
         className={`text-5xl underlined tworows text-center transition-all duration-[1500ms] ease-in-out ${
