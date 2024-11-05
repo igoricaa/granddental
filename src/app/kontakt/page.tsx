@@ -15,8 +15,8 @@ const Kontakt = () => {
   };
 
   return (
-    <main className='pt-64 pb-56 px-8 max-w-7xl mx-auto grid grid-cols-2 gap-16'>
-      <div className='bg-primary-default p-16 text-black h-fit'>
+    <main className='pt-32 md:pt-48 lg:pt-64 pb-36 md:pb-56 px-4 md:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16'>
+      <div className='bg-primary-default p-4 md:p-8 lg:p-16 text-black h-fit order-2 lg:order-1'>
         <h2 className='text-4xl underlined'>
           Dostupni smo za sva Vaša pitanja 24/7
         </h2>
@@ -38,7 +38,7 @@ const Kontakt = () => {
           )}
         </div>
 
-        <div className='mt-4 flex flex-col gap-4'>
+        <div className='mt-4 flex flex-col gap-4 order-1 lg:order-2'>
           <a href='tel:00381616589540' className='w-fit'>
             +381 61 6589540
           </a>

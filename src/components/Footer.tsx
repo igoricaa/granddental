@@ -6,7 +6,7 @@ import { Link } from 'next-view-transitions';
 
 const Footer = () => {
   return (
-    <footer className='justify-between px-4 md:px-8 lg:px-[10vw] py-16 md:py-20 lg:py-32 bg-accent-default'>
+    <footer className='justify-between px-8 md:px-16 lg:px-[10vw] py-20 md:py-20 lg:py-32 bg-accent-default'>
       <div className='flex flex-col lg:flex-row gap-16 lg:gap-32'>
         <div className='w-40 h-40 lg:w-52 lg:h-52 relative'>
           <Image src={logo} alt='logo' fill className='object-cover' />
