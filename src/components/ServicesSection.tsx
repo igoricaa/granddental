@@ -40,7 +40,7 @@ const ServicesSection = () => {
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
 
   return (
-    <section className='py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-16 overflow-hidden '>
+    <section className='py-16 md:py-24 lg:py-28 px-4 md:px-8 lg:px-16 overflow-hidden '>
       <div
         ref={ref}
         className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-5 lg:gap-12 lg:items-center lg:px-16 transition-all duration-[1500ms] ease-in-out ${

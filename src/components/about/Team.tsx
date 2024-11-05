@@ -12,7 +12,7 @@ const Team = () => {
   });
 
   return (
-    <div className='py-16 md:24 lg:py-32'>
+    <div className='py-16 md:24 lg:py-28'>
       <div ref={headerRef} className='max-w-3xl mx-auto flex flex-col items-center'>
         <Subtitle
           className={`${

@@ -19,7 +19,7 @@ const AboutSection = () => {
   return (
     <section
       ref={imageRef}
-      className='mx-auto py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row justify-center items-center gap-16 px-4 md:px-8 overflow-hidden'
+      className='mx-auto py-16 md:py-24 lg:py-28 flex flex-col lg:flex-row justify-center items-center gap-16 px-4 md:px-8 overflow-hidden'
     >
       <div
         className={`w-full lg:max-w-2xl relative flex-1 aspect-[700/467] transition-all duration-[1500ms] ease-in-out ${
@@ -41,7 +41,7 @@ const AboutSection = () => {
         className={`lg:max-w-2xl flex-1 transition-all duration-[1500ms] ease-in-out ${
           textInView
             ? `translate-y-0 lg:translate-x-0 opacity-100 blur-0`
-            : `translate-y-80 lg:translate-x-80 opacity-0 blur-[2px]`
+            : `translate-y-80 lg:translate-y-0 lg:translate-x-80 opacity-0 blur-[2px]`
         }`}
       >
         <Subtitle>O nama</Subtitle>

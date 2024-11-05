@@ -43,6 +43,10 @@ const ServiceItem = ({
       } ${className}`}
     >
       <div
+        style={{
+          transitionProperty: 'transform, opacity, visibility',
+          transitionDuration: '1500ms, 1000ms, 1000ms',
+        }}
         className={`flex flex-col justify-center items-start bg-primary-default ${
           invert ? 'px-4 lg:pr-16 lg:pl-32' : 'px-4 lg:pl-16 lg:pr-32'
         } py-16 lg:w-[50vw] max-w-5xl lg:min-w-[600px] lg:min-h-[560px] text-textDark ${
@@ -51,7 +55,7 @@ const ServiceItem = ({
             : `${
                 invert ? 'translate-x-80' : '-translate-x-80'
               } opacity-0 invisible blur-[2px]`
-        } transition-all duration-[1500ms] ease-in-out`}
+        } ease-in-out`}
       >
         <Subtitle>{subtitle}</Subtitle>
         <h3 className='text-4xl text-white mt-5 underlined'>{title}</h3>
@@ -65,7 +69,11 @@ const ServiceItem = ({
       </div>
 
       <div
-        className={`relative z-10 flex-1 aspect-[700/467] lg:min-w-[600px] lg:max-w-[700px] group transition-all duration-[1500ms] ease-in-out overflow-hidden ${
+        style={{
+          transitionProperty: 'transform, opacity, visibility',
+          transitionDuration: '1500ms, 1000ms, 1000ms',
+        }}
+        className={`relative z-10 flex-1 aspect-[700/467] lg:min-w-[600px] lg:max-w-[700px] group ease-in-out overflow-hidden ${
           invert ? 'lg:translate-x-24' : 'lg:-translate-x-24'
         } ${
           inView

@@ -11,7 +11,7 @@ const Bojan = () => {
   return (
     <div
       ref={ref}
-      className='mt-32 lg:grid lg:grid-cols-12 lg:items-center max-w-8xl lg:mx-auto overflow-hidden'
+      className='mt-28 lg:grid lg:grid-cols-12 lg:items-center max-w-8xl lg:mx-auto overflow-hidden'
     >
       <div
         className={`lg:col-span-6 lg:col-start-2 max-w-7xl bg-primary-default text-black px-4 py-8 md:px-8 h-fit z-10 ${

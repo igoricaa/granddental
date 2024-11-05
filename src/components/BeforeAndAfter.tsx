@@ -72,7 +72,7 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
 
   return (
     <section
-      className={`flex flex-col items-center relative max-w-8xl mx-auto px-4 md:px-8 lg:px-0 py-16 md:py-24 lg:py-32 ${className}`}
+      className={`flex flex-col items-center relative max-w-8xl mx-auto px-4 md:px-8 lg:px-0 py-16 md:py-24 lg:py-28 ${className}`}
     >
       <Subtitle>Rezultati</Subtitle>
       <h2 className='text-5xl underlined mt-5'>Pre i posle nas</h2>
