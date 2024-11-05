@@ -60,6 +60,7 @@ const MobileMenu = () => {
                 isSubmenuOpen={isSubmenuOpen}
                 setIsSubmenuOpen={setIsSubmenuOpen}
                 variant='mobilemenu'
+                onClick={handleClick}
                 {...route}
               />
             ))}

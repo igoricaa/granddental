@@ -30,14 +30,17 @@ const SubMenuItem = ({
   item,
   variant,
   pathname,
+  onClick,
 }: {
   item: { name: string; href: string };
   variant: 'header' | 'footer' | 'mobilemenu';
   pathname: string;
+  onClick?: () => void;
 }) => (
   <li key={item.href}>
     <Link
       href={item.href}
+      onClick={onClick}
       className={`
       relative inline-block py-1 text-xs uppercase tracking-wider
       ${
@@ -69,6 +72,7 @@ const MenuItem = ({
   index,
   isSubmenuOpen,
   setIsSubmenuOpen,
+  onClick,
 }: {
   name: string;
   href: string;
@@ -78,6 +82,7 @@ const MenuItem = ({
   index?: number;
   isSubmenuOpen?: boolean;
   setIsSubmenuOpen?: (isOpen: boolean) => void;
+  onClick?: () => void;
 }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -130,6 +135,7 @@ const MenuItem = ({
       ) : (
         <Link
           href={href}
+          onClick={onClick}
           className={`
           ${
             variant === 'mobilemenu'
@@ -176,6 +182,7 @@ const MenuItem = ({
                 item={item}
                 variant={variant}
                 pathname={pathname}
+                onClick={onClick}
               />
             ))}
           </ul>
