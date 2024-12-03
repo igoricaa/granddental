@@ -12,7 +12,7 @@ const AboutSection = () => {
     triggerOnce: true,
   });
   const { ref: imageRef, inView: imageInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.35,
     triggerOnce: true,
   });
 

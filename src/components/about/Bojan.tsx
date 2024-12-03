@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import Subtitle from '../UI/Subtitle';
 
 const Bojan = () => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.35, triggerOnce: true });
 
   return (
     <div

@@ -7,7 +7,7 @@ import TeamMember from './TeamMember';
 
 const Team = () => {
   const { ref: headerRef, inView: headerInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.35,
     triggerOnce: true,
   });
 

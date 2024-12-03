@@ -66,7 +66,7 @@ const ContactForm = () => {
         />
         <input
           type='hidden'
-          value='Kontakt forma realvibestudio.com'
+          value='Kontakt forma granddental.rs'
           {...register('from_name')}
         />
         <div className='relative'>

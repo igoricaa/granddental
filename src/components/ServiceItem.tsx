@@ -32,7 +32,7 @@ const ServiceItem = ({
   invert = false,
   className,
 }: ServiceItemProps) => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.35, triggerOnce: true });
 
   return (
     <article

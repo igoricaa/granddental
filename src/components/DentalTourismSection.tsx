@@ -8,7 +8,7 @@ import Button from './UI/Button';
 import { useInView } from 'react-intersection-observer';
 
 const DentalTourismSection = () => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.35, triggerOnce: true });
 
   return (
     <section
