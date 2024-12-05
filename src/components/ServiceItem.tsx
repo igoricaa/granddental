@@ -47,7 +47,7 @@ const ServiceItem = ({
           transitionProperty: 'transform, opacity, visibility',
           transitionDuration: '1500ms, 1000ms, 1000ms',
         }}
-        className={`flex flex-col justify-center items-start bg-primary-default py-8 lg:py-16 px-4 md:px-8 ${
+        className={`flex flex-col justify-center items-start bg-primary-default py-8 lg:py-16 px-4 sm:px-8 ${
           invert ? 'lg:pr-16 lg:pl-32' : 'lg:pl-16 lg:pr-32'
         } lg:w-[50vw] max-w-5xl lg:min-w-[600px] lg:min-h-[560px] text-textDark ${
           inView
@@ -77,13 +77,13 @@ const ServiceItem = ({
           transitionProperty: 'transform, opacity, visibility',
           transitionDuration: '1500ms, 1000ms, 1000ms',
         }}
-        className={`relative z-10 flex-1 aspect-[700/467] w-full max-w-[256px] md:max-w-[400px] lg:min-w-[600px] lg:max-w-[700px] group ease-in-out overflow-hidden ${
+        className={`relative z-10 flex-1 aspect-[700/467] w-full max-w-[256px] sm:max-w-[400px] lg:min-w-[600px] lg:max-w-[700px] group ease-in-out overflow-hidden ${
           invert
             ? 'mr-auto lg:mr-0 lg:translate-x-24'
             : 'ml-auto lg:ml-0 lg:-translate-x-24'
         } ${
           inView
-            ? '-translate-y-16 md:-translate-y-32 lg:translate-y-0 opacity-100 visible blur-0'
+            ? '-translate-y-16 sm:-translate-y-32 lg:translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
         }`}
       >

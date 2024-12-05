@@ -14,10 +14,10 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <Gallery className='my-40' />
-      <ServicesSection />
+      <ServicesSection className='pb-0 pt-16 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-16 overflow-hidden ' />
       <BeforeAndAfter beforeImage={beforeImage} afterImage={afterImage} />
       <DentalTourismSection />
-      <CtaSection />
+      <CtaSection/>
     </main>
   );
 }

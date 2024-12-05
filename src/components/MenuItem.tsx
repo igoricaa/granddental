@@ -18,7 +18,7 @@ const FOOTER_LINK_STYLES = `text-base lg:text-[14px] text-white/50 mt-0 lg:mt-0 
   transition-[background-size,background-position,color] duration-300 delay-[0s,0.3s, 0s]
   `;
 
-const MOBILE_MENU_LINK_STYLES = `text-2xl md:text-5xl lg:text-[14px] text-white/50 mt-4 md:mt-6 lg:mt-0 pb-1 z-5
+const MOBILE_MENU_LINK_STYLES = `text-2xl sm:text-5xl lg:text-[14px] text-white/50 mt-4 sm:mt-6 lg:mt-0 pb-1 z-5
   transition-[background-size,background-position,color, max-height] duration-300 delay-[0s,0.3s, 0s, 0s]`;
 
 const getGradientStyle = (variant: 'header' | 'footer' | 'mobilemenu') =>
@@ -112,8 +112,8 @@ const MenuItem = ({
             ${
               submenu
                 ? isSubmenuOpen
-                  ? 'max-h-[120px] md:max-h-[152px]'
-                  : 'max-h-[52px] md:max-h-[76px]'
+                  ? 'max-h-[120px] sm:max-h-[152px]'
+                  : 'max-h-[52px] sm:max-h-[76px]'
                 : ''
             }
             `

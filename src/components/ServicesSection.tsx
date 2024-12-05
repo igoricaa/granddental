@@ -36,28 +36,37 @@ const services = {
   },
 };
 
-const ServicesSection = () => {
+const ServicesSection = ({
+  hasTitle = true,
+  className,
+}: {
+  hasTitle?: boolean;
+  className?: string;
+}) => {
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
 
   return (
-    <section className='pb-0 pt-16 md:py-24 lg:py-28 px-4 md:px-8 lg:px-16 overflow-hidden'>
-      <div
-        ref={ref}
-        className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-5 lg:gap-12 lg:items-center mb-16 lg:mb-0 lg:px-16 transition-all duration-[1500ms] ease-in-out ${
-          inView
-            ? 'translate-y-0 opacity-100 visible blur-0'
-            : 'translate-y-32 opacity-0 invisible blur-[2px]'
-        }`}
-      >
-        <h2 className='text-6xl text-nowrap text-primary-default'>
-          Naše usluge
-        </h2>
-        <p>
-          U Grand Dental klinici nudimo širok spektar stomatoloških usluga. Naš
-          tim stručnjaka će se pobrinuti da dobijete najbolju moguću uslugu i da
-          se osećate prijatno tokom celog procesa.
-        </p>
-      </div>
+    <section className={`${className}`}>
+      {hasTitle && (
+        <div
+          ref={ref}
+          className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 sm:gap-5 lg:gap-12 lg:items-center mb-12 sm:mb-16 lg:mb-0 lg:px-16 transition-all duration-[1500ms] ease-in-out ${
+            inView
+              ? 'translate-y-0 opacity-100 visible blur-0'
+              : 'translate-y-32 opacity-0 invisible blur-[2px]'
+          }`}
+        >
+          <h2 className='text-6xl text-nowrap text-primary-default'>
+            Naše usluge
+          </h2>
+
+          <p>
+            U Grand Dental klinici nudimo širok spektar stomatoloških usluga.
+            Naš tim stručnjaka će se pobrinuti da dobijete najbolju moguću
+            uslugu i da se osećate prijatno tokom celog procesa.
+          </p>
+        </div>
+      )}
 
       <ServiceItem {...services.protetika} />
       <ServiceItem {...services.implantologija} invert className='lg:mt-56' />

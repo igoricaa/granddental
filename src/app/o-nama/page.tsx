@@ -6,7 +6,7 @@ import { Gallery } from '@/components/gallery';
 
 const About = () => {
   return (
-    <main className='pt-64 px-4 md:px-8'>
+    <main className='pt-32 sm:pt-40 lg:pt-64 px-4 sm:px-8'>
       <Intro />
       <Gallery className='my-40' />
       <Bojan />

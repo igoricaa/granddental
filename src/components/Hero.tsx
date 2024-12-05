@@ -4,7 +4,7 @@ import heroImage from '@/../public/hero.jpeg';
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-[60svh] lg:h-[100svh] flex flex-col justify-end pt-0 px-4 md:px-16 md:pb-40 lg:px-44 lg:pb-24 text-white before:content-[""] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-[110vw] before:h-[calc(100svh+2px)] before:-z-10 before:bg-background hero-clip-path overflow-hidden'>
+    <section className='relative w-full h-[60svh] lg:h-[100svh] flex flex-col justify-end pt-0 px-4 sm:px-16 sm:pb-40 lg:px-44 lg:pb-24 text-white before:content-[""] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-[110vw] before:h-[calc(100svh+2px)] before:-z-10 before:bg-background hero-clip-path overflow-hidden'>
       <Image
         src={heroImage}
         alt='Grand Dental klinika'

@@ -16,7 +16,7 @@ const Bojan = () => {
       className='mt-28 lg:grid lg:grid-cols-12 lg:items-center max-w-8xl lg:mx-auto overflow-hidden'
     >
       <div
-        className={`lg:col-span-6 lg:col-start-2 max-w-7xl bg-primary-default text-black px-4 py-12 md:px-8 h-fit z-20 ${
+        className={`lg:col-span-6 lg:col-start-2 max-w-7xl bg-primary-default text-black px-4 py-12 sm:px-8 h-fit z-20 ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
@@ -36,7 +36,7 @@ const Bojan = () => {
           svojim pacijentima, koristeći najsavremenije metode i tehnike.
         </p>
       </div>
-      <div className='relative lg:col-span-5 lg:col-start-8 lg:min-h-[800px] max-w-96 lg:max-w-none ml-auto lg:ml-0 md:-translate-x-10 lg:-translate-x-20'>
+      <div className='relative lg:col-span-5 lg:col-start-8 lg:min-h-[800px] max-w-96 lg:max-w-none ml-auto lg:ml-0 sm:-translate-x-10 lg:-translate-x-20'>
         <div
           className={`absolute aspect-[544/800] w-64 top-10 left-16 ${
             inView

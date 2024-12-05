@@ -15,8 +15,8 @@ const Kontakt = () => {
   };
 
   return (
-    <main className='pt-32 md:pt-48 lg:pt-64 pb-36 md:pb-56 px-4 md:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16'>
-      <div className='bg-primary-default p-4 md:p-8 lg:p-16 text-black h-fit order-2 lg:order-1'>
+    <main className='pt-32 sm:pt-48 lg:pt-64 pb-36 sm:pb-56 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16'>
+      <div className='bg-primary-default p-4 sm:p-8 lg:p-16 text-black h-fit order-2 lg:order-1'>
         <h2 className='text-4xl underlined'>
           Dostupni smo za sva Vaša pitanja 24/7
         </h2>
