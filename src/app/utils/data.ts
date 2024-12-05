@@ -8,6 +8,10 @@ export const routes = [
     href: '/o-nama',
   },
   {
+    name: 'Hollywood Smile',
+    href: '/hollywood-smile',
+  },
+  {
     name: 'Usluge',
     href: '/usluge',
     // submenu: [

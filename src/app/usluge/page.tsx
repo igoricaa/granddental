@@ -1,5 +1,6 @@
 import CtaSection from '@/components/CtaSection';
 import ServicesSection from '@/components/ServicesSection';
+import Button from '@/components/UI/Button';
 import Subtitle from '@/components/UI/Subtitle';
 
 const Usluge = () => {
@@ -10,8 +11,8 @@ const Usluge = () => {
         <h1 className='text-4xl mt-5 underlined'>
           Implantologija i protetika na najvišem nivou
         </h1>
-        <div className='mt-8 max-w-4xl'>
-          <p className='bg-primary-default px-4 sm:px-8 py-4 sm:py-8 text-black'>
+        <div className='bg-primary-default px-4 sm:px-8 py-4 sm:py-8 mt-8 max-w-4xl'>
+          <p className='text-black'>
             Dobrodošli u svet gde stomatologija postaje umetnost, a vaš osmeh -
             remek-delo. Kod nas, implantologija i protetika nisu samo medicinske
             usluge, već luksuzno iskustvo osmišljeno da vam pruži besprekoran
@@ -23,12 +24,19 @@ const Usluge = () => {
             vašeg stila, vaše moći i vašeg savršenstva. Kod nas, svaki detalj je
             promišljen, jer zaslužujete samo najbolje.
           </p>
+          <Button
+            href='/kontakt'
+            variant='secondary'
+            className={`mt-6 sm:mt-8`}
+          >
+            Zakažite pregled
+          </Button>
         </div>
       </section>
 
       <ServicesSection
         hasTitle={false}
-        className='overflow-hidden mt-24 sm:mt-32 lg:mt-20 lg:pb-32'
+        className='overflow-hidden mt-24 lg:mt-20 lg:pb-32'
       />
 
       <CtaSection />

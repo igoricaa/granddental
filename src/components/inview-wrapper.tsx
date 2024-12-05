@@ -1,6 +1,5 @@
 'use client';
 
-import { CSSProperties, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const InViewWrapper = ({
@@ -16,8 +15,8 @@ const InViewWrapper = ({
   threshold?: number;
   duration?: number;
   ease?: string;
-  from: CSSProperties;
-  to: CSSProperties;
+  from: string;
+  to: string;
   className?: string;
 }) => {
   const { ref, inView } = useInView({
@@ -28,11 +27,10 @@ const InViewWrapper = ({
   return (
     <div
       ref={ref}
-      className={`${className} transition-all`}
+      className={`${className} transition-all ${inView ? to : from}`}
       style={{
         transitionDuration: `${duration}ms`,
         transitionTimingFunction: ease,
-        ...(inView ? to : from),
       }}
     >
       {children}

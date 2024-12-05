@@ -46,19 +46,10 @@ const ServicesSection = ({
       {hasTitle && (
         <InViewWrapper
           className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 sm:gap-5 lg:gap-12 lg:items-center mb-12 sm:mb-16 lg:mb-0 lg:px-16`}
-          from={{
-            transform: 'translateY(128px)',
-            filter: 'blur(2px)',
-            opacity: 0,
-            visibility: 'hidden',
-          }}
-          to={{
-            transform: 'translateY(0px)',
-            filter: 'blur(0px)',
-            opacity: 1,
-            visibility: 'visible',
-          }}
+          from='translate-y-32 opacity-0 invisible blur-[2px]'
+          to='translate-y-0 opacity-100 visible blur-0'
           duration={700}
+          threshold={0.5}
         >
           <h2 className='text-6xl text-nowrap text-primary-default'>
             Naše usluge
