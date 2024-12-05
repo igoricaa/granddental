@@ -26,7 +26,7 @@ const mapConfig: MapConfig = {
 
 const API_KEY: string = process.env.GOOGLE_MAPS_API_KEY!;
 
-const GoogleMap = () => {
+const GoogleMap = ({ className }: { className?: string }) => {
   const position = { lat: 44.80054638504948, lng: 20.481693287181592 };
 
   return (
@@ -39,7 +39,7 @@ const GoogleMap = () => {
         styles={mapConfig.styles}
         disableDefaultUI={true}
         keyboardShortcuts={false}
-        className='aspect-[1435/647] rounded-[30px] mt-10 [&_.gm-style_iframe+div]:border-none'
+        className={`${className} [&_.gm-style_iframe+div]:border-none`}
       >
         <Marker position={position} />
       </Map>

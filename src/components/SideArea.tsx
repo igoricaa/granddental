@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/../public/logos/logo.png';
+import GoogleMap from './GoogleMap';
 
 const SideArea = () => {
   const [showCopyBanner, setShowCopyBanner] = useState(false);
@@ -101,9 +102,7 @@ const SideArea = () => {
           </Link>
         </div>
 
-        <div className='mt-8 aspect-video w-full bg-gray-200'>
-          {/* Add your Google Maps component here */}
-        </div>
+        <GoogleMap className='mt-8 w-full aspect-video' />
       </div>
     </>
   );

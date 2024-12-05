@@ -14,7 +14,7 @@ const DentalTourismSection = () => {
     <section
       id='dentalni-turizam'
       ref={ref}
-      className='my-24 lg:my-32 px-4 md:px-8 lg:px-20 pt-24 md:pt-28 lg:pt-40 pb-16 md:pb-20 w-[100vw] lg:h-[600px] relative flex flex-col lg:flex-row items-center gap-10 overflow-hidden scroll-mt-60'
+      className='my-24 lg:my-32 px-4 md:px-8 lg:px-20 pt-24 md:pt-28 lg:pt-40 pb-16 md:pb-20 lg:h-[600px] relative flex flex-col lg:flex-row items-center gap-10 overflow-hidden scroll-mt-60'
     >
       <Image
         src={dentalTourismImage}

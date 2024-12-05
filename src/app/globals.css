@@ -51,6 +51,12 @@ p {
   line-height: 145%;
 }
 
+@layer utilities {
+  .hero-clip-path::before {
+    clip-path: ellipse(50% 13% at 50% 100%);
+  }
+}
+
 .underlined {
   position: relative;
   width: fit-content;

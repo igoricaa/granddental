@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Button from './UI/Button';
-import heroImage from '@/../public/hero.png';
+import heroImage from '@/../public/hero.jpeg';
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-[80svh] flex flex-col justify-end pt-0 px-4 md:px-16 md:pb-40 lg:px-44 lg:pb-24 text-white'>
+    <section className='relative w-full h-[60svh] lg:h-[100svh] flex flex-col justify-end pt-0 px-4 md:px-16 md:pb-40 lg:px-44 lg:pb-24 text-white before:content-[""] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-[110vw] before:h-[calc(100svh+2px)] before:-z-10 before:bg-background hero-clip-path overflow-hidden'>
       <Image
         src={heroImage}
         alt='Grand Dental klinika'
@@ -12,9 +12,9 @@ const Hero = () => {
         sizes='100vw'
         quality={85}
         priority
-        className='object-cover -z-10'
+        className='object-contain lg:object-cover -z-20 object-top lg:object-[100%_30%] lg:height-750:object-[100%_20%] aspect-[828/552] lg:aspect-auto max-w-full'
       />
-      <h1 className='text-6xl'>Dobrodošli u Grand Dental</h1>
+      <h1 className='text-5xl lg:text-6xl'>Dobrodošli u Grand Dental</h1>
       <h4 className='mt-4 text-2xl'>
         Naša misija je da vam stvorimo holivudski osmeh, bez filtera.
       </h4>

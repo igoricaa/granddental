@@ -57,7 +57,7 @@ const Kontakt = () => {
             Instagram
           </Link>
         </div>
-        <GoogleMap />
+        <GoogleMap className='aspect-[1435/647] rounded-[30px] mt-10' />
       </div>
       <ContactForm />
     </main>

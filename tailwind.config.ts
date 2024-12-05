@@ -14,6 +14,9 @@ const config: Config = {
       screens: {
         '2xl': '1500px',
         'max-w-8xl': '1440px',
+        'height-750': {
+          raw: '(max-height: 750px)',
+        },
       },
       colors: {
         background: 'var(--background)',
