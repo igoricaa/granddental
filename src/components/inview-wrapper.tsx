@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 const InViewWrapper = ({
   children,
   threshold = 1,
-  duration = 0.5,
+  duration = 500,
   ease = 'ease-in-out',
   from,
   to,
@@ -28,10 +28,11 @@ const InViewWrapper = ({
   return (
     <div
       ref={ref}
-      className={`${className} ${inView ? to : from} transition-all`}
+      className={`${className} transition-all`}
       style={{
-        transitionDuration: `${duration}s`,
+        transitionDuration: `${duration}ms`,
         transitionTimingFunction: ease,
+        ...(inView ? to : from),
       }}
     >
       {children}

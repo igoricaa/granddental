@@ -1,12 +1,10 @@
-'use client';
-
 import protetikaImage1 from '@/../public/services/protetika-1.jpg';
 import protetikaImage2 from '@/../public/services/protetika-2.jpg';
 import hirurgijaImage1 from '@/../public/services/hirurgija-1.jpg';
 import hirurgijaImage2 from '@/../public/services/hirurgija-2.webp';
 import ServiceItem from './ServiceItem';
-import { useInView } from 'react-intersection-observer';
 
+import InViewWrapper from './inview-wrapper';
 const services = {
   protetika: {
     id: 'protetika',
@@ -43,18 +41,24 @@ const ServicesSection = ({
   hasTitle?: boolean;
   className?: string;
 }) => {
-  const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
-
   return (
     <section className={`${className}`}>
       {hasTitle && (
-        <div
-          ref={ref}
-          className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 sm:gap-5 lg:gap-12 lg:items-center mb-12 sm:mb-16 lg:mb-0 lg:px-16 transition-all duration-[1500ms] ease-in-out ${
-            inView
-              ? 'translate-y-0 opacity-100 visible blur-0'
-              : 'translate-y-32 opacity-0 invisible blur-[2px]'
-          }`}
+        <InViewWrapper
+          className={`max-w-8xl mx-auto flex flex-col lg:flex-row gap-6 sm:gap-5 lg:gap-12 lg:items-center mb-12 sm:mb-16 lg:mb-0 lg:px-16`}
+          from={{
+            transform: 'translateY(128px)',
+            filter: 'blur(2px)',
+            opacity: 0,
+            visibility: 'hidden',
+          }}
+          to={{
+            transform: 'translateY(0px)',
+            filter: 'blur(0px)',
+            opacity: 1,
+            visibility: 'visible',
+          }}
+          duration={700}
         >
           <h2 className='text-6xl text-nowrap text-primary-default'>
             Naše usluge
@@ -65,7 +69,7 @@ const ServicesSection = ({
             Naš tim stručnjaka će se pobrinuti da dobijete najbolju moguću
             uslugu i da se osećate prijatno tokom celog procesa.
           </p>
-        </div>
+        </InViewWrapper>
       )}
 
       <ServiceItem {...services.protetika} />
