@@ -17,12 +17,12 @@ const Button = ({
   type?: 'button' | 'submit';
 }) => {
   const commonProps = {
-    className: `w-fit lg:px-8 lg:py-4 sm:px-6 sm:py-3 px-4 py-2 block transition-colors duration-300 text-nowrap font-brandonBold  ${
+    className: `w-fit lg:px-8 lg:py-4 sm:px-6 sm:py-3 px-5 py-4 block transition-colors duration-300 text-nowrap font-brandonBold  ${
       variant === 'secondary'
         ? 'bg-white text-buttonTextDark border border-primary-dark hover:border-white hover:bg-primary-default hover:text-white'
         : variant === 'accented'
         ? 'text-white bg-accent-default hover:bg-accent-dark'
-        : 'text-black bg-primary-default hover:bg-primary-dark'
+        : 'text-light bg-accent-default hover:bg-accent-dark'
     } ${className}`,
     ...props,
   };

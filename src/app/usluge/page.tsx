@@ -11,8 +11,8 @@ const Usluge = () => {
         <h1 className='text-4xl mt-5 underlined'>
           Implantologija i protetika na najvišem nivou
         </h1>
-        <div className='bg-primary-default px-4 sm:px-8 py-4 sm:py-8 mt-8 max-w-4xl'>
-          <p className='text-black'>
+        <div className='bg-containerBg-default px-4 sm:px-8 py-4 sm:py-8 mt-8 max-w-4xl'>
+          <p className='text-light'>
             Dobrodošli u svet gde stomatologija postaje umetnost, a vaš osmeh -
             remek-delo. Kod nas, implantologija i protetika nisu samo medicinske
             usluge, već luksuzno iskustvo osmišljeno da vam pruži besprekoran
@@ -26,7 +26,6 @@ const Usluge = () => {
           </p>
           <Button
             href='/kontakt'
-            variant='secondary'
             className={`mt-6 sm:mt-8`}
           >
             Zakažite pregled

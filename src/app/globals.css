@@ -7,9 +7,12 @@
   --primary-color-dark: rgba(235, 180, 114, 1);
   --accent-color: rgba(41, 160, 165, 1);
   --accent-color-dark: rgba(36, 140, 145, 1);
-  --background: rgba(78, 78, 78, 1);
+  --container-bg-color: rgba(255, 255, 255, 0.05);
+  /* --background: rgba(78, 78, 78, 1); */
+  --background: rgba(28, 28, 28, 1);
   --background-dark: rgba(78, 78, 78, 0.8);
   --text-dark: #383838;
+  --text-light: #fff;
   --button-text-dark: #905f24;
 }
 
@@ -65,7 +68,7 @@ p {
     content: ' ';
     width: 40%;
     height: 2px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     position: absolute;
     left: 0;
     bottom: -0.3rem;

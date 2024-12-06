@@ -17,8 +17,8 @@ const HollywoodSmile = () => {
           Luksuzan Osmeh u Samo 5-7 Radnih Dana
         </h1>
         <div className='flex flex-col lg:flex-row gap-16 justify-between mt-8'>
-          <div className='bg-primary-default px-4 sm:px-8 py-4 sm:py-8 lg:min-w-[500px] lg:max-w-[750px]'>
-            <p className=' text-black'>
+          <div className='bg-containerBg-default px-4 sm:px-8 py-4 sm:py-8 lg:min-w-[500px] lg:max-w-[750px]'>
+            <p className=' text-light'>
               Zamislite osmeh koji oduzima dah - osmeh koji zrači savršenstvom,
               elegancijom i samopouzdanjem. Kod nas, Hollywood Smile terapija
               nije samo dentalni tretman; to je transformativno iskustvo koje
@@ -31,7 +31,7 @@ const HollywoodSmile = () => {
               novih zuba, kako bi svaki detalj bio savršeno usklađen s vašim
               željama i jedinstvenim karakteristikama.
             </p>
-            <p className='text-black mt-4 sm:mt-8'>
+            <p className='text-light mt-4 sm:mt-8'>
               {' '}
               Kada ste potpuno zadovoljni izgledom prototipa, prelazimo na probu
               full cirkon krunica - najsavremenijih i najluksuznijih materijala
@@ -45,11 +45,7 @@ const HollywoodSmile = () => {
               osmeh koji će govoriti za vas. Jer osmeh nije samo lep; osmeh je
               vaš potpis.
             </p>
-            <Button
-              href='/kontakt'
-              variant='secondary'
-              className={`mt-6 sm:mt-8`}
-            >
+            <Button href='/kontakt' className={`mt-6 sm:mt-8`}>
               Zakažite pregled
             </Button>
           </div>

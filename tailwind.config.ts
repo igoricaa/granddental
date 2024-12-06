@@ -28,11 +28,15 @@ const config: Config = {
           default: 'var(--accent-color)',
           dark: 'var(--accent-color-dark)',
         },
+        containerBg: {
+          default: 'var(--container-bg-color)',
+        },
         bgmain: {
           default: 'var(--bgmain-color)',
           dark: 'var(--bgmain-color-dark)',
         },
         textDark: 'var(--text-dark)',
+        textLight: 'var(--text-light)',
         buttonTextDark: 'var(--button-text-dark)',
       },
       fontFamily: {

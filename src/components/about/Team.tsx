@@ -33,7 +33,7 @@ const Team = () => {
           Naš tim
         </h2>
         <p
-          className={`mt-8 bg-primary-default px-4 py-4 text-black ${
+          className={`mt-8 bg-containerBg-default px-4 py-4 text-light ${
             headerInView
               ? 'translate-y-0 opacity-100 visible'
               : 'translate-y-20 opacity-0 invisible blur-[2px]'

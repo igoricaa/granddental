@@ -47,9 +47,9 @@ const ServiceItem = ({
           transitionProperty: 'transform, opacity, visibility',
           transitionDuration: '1500ms, 1000ms, 1000ms',
         }}
-        className={`flex flex-col justify-center items-start bg-primary-default py-8 lg:py-16 px-4 sm:px-8 ${
+        className={`flex flex-col justify-center items-start bg-containerBg-default py-8 lg:py-16 px-4 sm:px-8 ${
           invert ? 'lg:pr-16 lg:pl-32' : 'lg:pl-16 lg:pr-32'
-        } lg:w-[50vw] max-w-5xl lg:min-w-[600px] lg:min-h-[560px] text-textDark ${
+        } lg:w-[50vw] max-w-5xl lg:min-w-[600px] lg:min-h-[560px] text-light ${
           inView
             ? 'translate-x-0 opacity-100 visible blur-0'
             : `${
@@ -65,7 +65,6 @@ const ServiceItem = ({
 
         <Button
           href='/kontakt'
-          variant='secondary'
           className={`${invert && 'ml-auto lg:ml-0'} mt-8`}
         >
           {buttonText}

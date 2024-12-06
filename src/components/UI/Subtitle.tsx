@@ -7,7 +7,7 @@ const Subtitle = ({
 }) => {
   return (
     <span
-      className={`uppercase text-sm px-2 py-2 text-white bg-accent-default ${className}`}
+      className={`uppercase text-sm px-2 py-2 text-black bg-primary-default ${className}`}
     >
       {children}
     </span>

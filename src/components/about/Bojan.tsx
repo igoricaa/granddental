@@ -16,7 +16,7 @@ const Bojan = () => {
       className='mt-28 lg:grid lg:grid-cols-12 lg:items-center max-w-8xl lg:mx-auto overflow-hidden'
     >
       <div
-        className={`lg:col-span-6 lg:col-start-2 max-w-7xl bg-primary-default text-black px-4 py-12 sm:px-8 h-fit z-20 ${
+        className={`lg:col-span-6 lg:col-start-2 max-w-7xl bg-containerBg-default text-light px-4 py-12 sm:px-8 h-fit z-20 ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
