@@ -14,6 +14,8 @@
   --text-dark: #383838;
   --text-light: #fff;
   --button-text-dark: #905f24;
+  --padding-container-x: 4rem;
+  --padding-container-y: 4rem;
 }
 
 body {
@@ -87,5 +89,21 @@ p {
     left: unset;
     right: 23%;
     width: 30%;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  :root {
+    --padding-container-x: 2rem;
+    --padding-container-y: 2rem;
+  }
+}
+
+
+@media (max-width: 640px) {
+  :root {
+    --padding-container-x: 1rem;
+    --padding-container-y: 1.5rem;
   }
 }

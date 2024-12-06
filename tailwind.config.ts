@@ -18,6 +18,10 @@ const config: Config = {
           raw: '(max-height: 750px)',
         },
       },
+      padding: {
+        containerX: 'var(--padding-container-x)',
+        containerY: 'var(--padding-container-y)',
+      },
       colors: {
         background: 'var(--background)',
         primary: {

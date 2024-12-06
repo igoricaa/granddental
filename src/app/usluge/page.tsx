@@ -11,7 +11,7 @@ const Usluge = () => {
         <h1 className='text-4xl mt-5 underlined'>
           Implantologija i protetika na najvišem nivou
         </h1>
-        <div className='bg-containerBg-default px-4 sm:px-8 py-4 sm:py-8 mt-8 max-w-4xl'>
+        <div className='bg-containerBg-default px-containerX py-containerY mt-8 max-w-4xl'>
           <p className='text-light'>
             Dobrodošli u svet gde stomatologija postaje umetnost, a vaš osmeh -
             remek-delo. Kod nas, implantologija i protetika nisu samo medicinske

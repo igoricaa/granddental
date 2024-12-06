@@ -17,8 +17,8 @@ const HollywoodSmile = () => {
           Luksuzan Osmeh u Samo 5-7 Radnih Dana
         </h1>
         <div className='flex flex-col lg:flex-row gap-16 justify-between mt-8'>
-          <div className='bg-containerBg-default px-4 sm:px-8 py-4 sm:py-8 lg:min-w-[500px] lg:max-w-[750px]'>
-            <p className=' text-light'>
+          <div className='bg-containerBg-default px-containerX py-containerY lg:min-w-[500px] lg:max-w-[750px]'>
+            <p className='text-light'>
               Zamislite osmeh koji oduzima dah - osmeh koji zrači savršenstvom,
               elegancijom i samopouzdanjem. Kod nas, Hollywood Smile terapija
               nije samo dentalni tretman; to je transformativno iskustvo koje

@@ -39,7 +39,7 @@ const AboutSection = () => {
 
       <div
         ref={textRef}
-        className={`lg:max-w-2xl flex-1 transition-all duration-[1500ms] ease-in-out ${
+        className={`lg:max-w-2xl flex-1 bg-containerBg-default px-containerX py-containerY transition-all duration-[1500ms] ease-in-out ${
           textInView
             ? `translate-y-0 lg:translate-x-0 opacity-100 blur-0`
             : `translate-y-80 lg:translate-y-0 lg:translate-x-80 opacity-0 blur-[2px]`

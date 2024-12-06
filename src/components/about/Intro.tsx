@@ -21,15 +21,14 @@ const Intro = () => {
       <Subtitle>O nama</Subtitle>
       <h1 className='text-4xl mt-5 underlined'>Ko smo mi?</h1>
       <div className='flex flex-col sm:flex-row gap-8 justify-between mt-8'>
-        <p className='bg-containerBg-default px-4 sm:px-8 py-4 sm:py-8 text-light'>
+        <TextContainer>
           U Grand Dentalu posvećeni smo vrhunskoj stomatološkoj nezi koja
           kombinuje stručnost, inovativne tehnike i najmoderniju opremu. Naš tim
           stručnjaka sa dugogodišnjim iskustvom u različitim oblastima
           stomatologije svakom pacijentu pristupa individualno, osiguravajući
           personalizovan plan lečenja koji odgovara vašim specifičnim potrebama.
-        </p>
-        <p className='bg-containerBg-default px-4 sm:px-8 py-4 sm:py-8 text-light'>
-          {' '}
+        </TextContainer>
+        <TextContainer>
           Naša ordinacija se ponosi najnovijim tehnologijama i tehnikama koje
           garantuju besprekorne rezultate, bilo da je reč o estetskoj
           stomatologiji, implantologiji ili složenim rekonstrukcijama. Uvek
@@ -37,7 +36,7 @@ const Intro = () => {
           najboljih. Verujemo da osmeh može promeniti život, a naša misija je da
           vam omogućimo upravo to - savršen osmeh koji donosi samopouzdanje i
           radost.
-        </p>
+        </TextContainer>
       </div>
 
       <h2 className='text-2xl px-4 sm:px-8 py-6 sm:py-8 bg-primary-default text-black text-end mt-14 w-fit ml-auto'>
@@ -49,3 +48,19 @@ const Intro = () => {
 };
 
 export default Intro;
+
+const TextContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={`bg-containerBg-default px-containerX py-containerY text-light ${className}`}
+    >
+      {children}
+    </div>
+  );
+};
