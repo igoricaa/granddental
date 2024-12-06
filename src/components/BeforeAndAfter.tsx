@@ -127,7 +127,7 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
             onTouchStart={() => setIsResizing(true)}
           >
             <svg
-              className='w-4 h-4 text-gray-600'
+              className='w-4 h-4 text-gray-600 rotate-90'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'

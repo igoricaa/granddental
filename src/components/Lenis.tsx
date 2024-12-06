@@ -1,8 +1,16 @@
 'use client';
-import { PropsWithChildren } from 'react';
-import { ReactLenis } from 'lenis/react';
+import { PropsWithChildren, useEffect } from 'react';
+import { ReactLenis, useLenis } from 'lenis/react';
+import { usePathname } from 'next/navigation';
 
 const Lenis = ({ children }: PropsWithChildren) => {
+  const pathname = usePathname();
+
+  const lenis = useLenis();
+  useEffect(() => {
+    lenis?.scrollTo(0, { immediate: true });
+  }, [pathname, lenis]);
+
   return (
     <ReactLenis
       root
