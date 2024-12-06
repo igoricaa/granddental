@@ -13,8 +13,8 @@ export default function Home() {
     <main>
       <Hero />
       <AboutSection />
-      <Gallery className='my-40' />
-      <ServicesSection className='pb-0 pt-16 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-16 overflow-hidden ' />
+      <Gallery className='my-28' />
+      <ServicesSection className='pb-0 pt-16 sm:py-24 lg:py-20 px-4 sm:px-8 lg:px-16 overflow-hidden ' />
       <BeforeAndAfter beforeImage={beforeImage} afterImage={afterImage} />
       <DentalTourismSection />
       <CtaSection/>

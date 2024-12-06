@@ -51,7 +51,9 @@ const CtaSection = ({ className }: { className?: string }) => {
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
         }`}
       >
-        Zakoračite u svet savršenog osmeha
+        Zakoračite u svet
+        <br />
+        savršenog osmeha
         {/* - zakažite online
         <br />
         pregled i krenite ka svom Hollywood Smile-u već danas! */}
@@ -64,7 +66,9 @@ const CtaSection = ({ className }: { className?: string }) => {
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
         }`}
       >
-        Ukoliko imate bilo kakva pitanja slobodno nas kontaktirajte!
+        Ukoliko imate bilo kakva pitanja
+        <br />
+        slobodno nas kontaktirajte!
       </p>
       <Button
         href='/kontakt'

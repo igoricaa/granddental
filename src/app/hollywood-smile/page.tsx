@@ -58,6 +58,7 @@ const HollywoodSmile = () => {
               <Image
                 src={hollywoodSmile1}
                 alt='Hollywood Smile'
+                priority
                 fill
                 className='object-cover'
               />
@@ -66,6 +67,7 @@ const HollywoodSmile = () => {
               <Image
                 src={hollywoodSmile2}
                 alt='Hollywood Smile'
+                priority
                 fill
                 className='object-cover'
               />

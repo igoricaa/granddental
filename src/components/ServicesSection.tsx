@@ -64,7 +64,7 @@ const ServicesSection = ({
       )}
 
       <ServiceItem {...services.protetika} />
-      <ServiceItem {...services.implantologija} invert className='lg:mt-56' />
+      <ServiceItem {...services.implantologija} invert className='!lg:mt-32' />
     </section>
   );
 };
