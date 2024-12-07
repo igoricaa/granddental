@@ -1,8 +1,10 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useState } from 'react';
 import Button from './UI/Button';
+import 'react-international-phone/style.css';
+import { PhoneInput } from 'react-international-phone';
 
 type FormData = {
   access_key: string;
@@ -16,6 +18,7 @@ type FormData = {
 
 const ContactForm = () => {
   const {
+    control,
     register,
     handleSubmit,
     reset,
@@ -113,25 +116,55 @@ const ContactForm = () => {
           )}
         </div>
         <div className='mt-8 relative'>
-          <input
-            id='phone'
-            className={`${
-              errors.phone ? 'border-red-500' : 'border-white'
-            } w-full bg-transparent border-b pb-2 px-2 outline-none placeholder:text-white/60`}
-            type='tel'
-            placeholder='Telefon'
-            {...register('phone', {
-              required: { value: true, message: 'Obavezno polje' },
+          <Controller
+            name='phone'
+            control={control}
+            rules={{
+              required: {
+                value: true,
+                message: 'Obavezno polje',
+              },
               validate: {
                 pattern: (value) =>
-                  /^[+\d\s\-()]+$/.test(value) || 'Broj telefona nije ispravan',
+                  /^\+\d{11,25}$/.test(value.replace(/\s+/g, '')) ||
+                  'Broj telefona nije ispravan',
                 minLength: (value) =>
-                  value.length >= 6 || 'Broj telefona je prekratak',
+                  value.replace(/\s+/g, '').length >= 11 ||
+                  'Broj telefona je prekratak',
                 maxLength: (value) =>
-                  value.length <= 20 || 'Broj telefona je predugačak',
+                  value.replace(/\s+/g, '').length <= 25 ||
+                  'Broj telefona je predugačak',
               },
-            })}
-            autoComplete='tel'
+            }}
+            render={({ field: { onChange, value } }) => (
+              <PhoneInput
+                defaultCountry='ba'
+                value={value}
+                onChange={(phone) => {
+                  onChange(phone);
+                }}
+                className='w-full'
+                inputClassName={`
+                  !w-full 
+                  !text-white
+                  !text-base
+                  !bg-transparent 
+                  !border-0
+                  !border-b 
+                  !rounded-none
+                  !pb-0
+                  !px-2 
+                  !outline-none 
+                  !placeholder:text-white/60
+                  ${errors.phone ? '!border-red-500' : '!border-white'}
+                `}
+                countrySelectorStyleProps={{
+                  buttonClassName:
+                    '!bg-transparent !border-0 !border-b !rounded-none',
+                }}
+                placeholder='Telefon'
+              />
+            )}
           />
           {errors.phone && (
             <p className='text-xs absolute left-2 -bottom-6 text-red-500'>
