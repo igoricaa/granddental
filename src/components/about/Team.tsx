@@ -1,9 +1,77 @@
 'use client';
 
-import { team } from '@/app/utils/data';
 import { useInView } from 'react-intersection-observer';
 import Subtitle from '../UI/Subtitle';
 import TeamMember from './TeamMember';
+import { TeamMemberType } from '@/app/utils/data';
+import vladimir from '@/../public/team/dr-vladimir-damnjanovic.jpeg';
+import milos from '@/../public/team/dr-milos-petrovic.jpeg';
+import jevto from '@/../public/team/dr-jevto-lukic.jpeg';
+import katarina from '@/../public/team/dr-katarina-mrkonjic.jpeg';
+import natasa from '@/../public/team/dr-natasa-dokic.jpeg';
+import olga from '@/../public/team/dr-olga-matic.jpeg';
+import ivana from '@/../public/team/dr-ivana-kovacevic.jpeg';
+import aleksandra from '@/../public/team/aleksandra-ilic.jpeg';
+import bojana from '@/../public/team/bojana-madic.jpeg';
+import kristina from '@/../public/team/kristina-djuric.jpeg';
+import aleksandar from '@/../public/team/aleksandar-zlatar.jpeg';
+import marko from '@/../public/team/marko-savic.jpeg';
+import jovana from '@/../public/team/jovana-savic.jpeg';
+
+const team: TeamMemberType[] = [
+  {
+    name: 'dr Vladimir Damnjanović',
+    image: vladimir,
+  },
+  {
+    name: 'dr Miloš Petrović',
+    image: milos,
+  },
+  {
+    name: 'dr Jevto Lukić',
+    image: jevto,
+  },
+  {
+    name: 'dr Nataša Dokić',
+    image: natasa,
+  },
+  {
+    name: 'dr Olga Matić',
+    image: olga,
+  },
+  {
+    name: 'dr Ivana Kovačević',
+    image: ivana,
+  },
+  {
+    name: 'dr Katarina Mrkonjić',
+    image: katarina,
+  },
+  {
+    name: 'Aleksandra Ilić',
+    image: aleksandra,
+  },
+  {
+    name: 'Bojana Madić',
+    image: bojana,
+  },
+  {
+    name: 'Kristina Đurić',
+    image: kristina,
+  },
+  {
+    name: 'Aleksandar Zlatar',
+    image: aleksandar,
+  },
+  {
+    name: 'Marko Savić',
+    image: marko,
+  },
+  {
+    name: 'Jovana Savić',
+    image: jovana,
+  },
+];
 
 const Team = () => {
   const { ref: headerRef, inView: headerInView } = useInView({
@@ -13,7 +81,10 @@ const Team = () => {
 
   return (
     <div className='py-16 sm:24 lg:py-28'>
-      <div ref={headerRef} className='max-w-3xl mx-auto flex flex-col items-center'>
+      <div
+        ref={headerRef}
+        className='max-w-3xl mx-auto flex flex-col items-center'
+      >
         <Subtitle
           className={`${
             headerInView

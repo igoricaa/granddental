@@ -1,4 +1,3 @@
-// import BlurFade from "@/components/magicui/blur-fade";
 import gallery1 from '@/../public/gallery/1.jpeg';
 import gallery2 from '@/../public/gallery/2.jpeg';
 import gallery3 from '@/../public/gallery/3.jpeg';
