@@ -19,7 +19,6 @@
 }
 
 body {
-  background: var(--background);
   color: #fff;
 }
 
@@ -92,14 +91,12 @@ p {
   }
 }
 
-
 @media (max-width: 1024px) {
   :root {
     --padding-container-x: 2rem;
     --padding-container-y: 2rem;
   }
 }
-
 
 @media (max-width: 640px) {
   :root {

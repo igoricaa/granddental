@@ -40,7 +40,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='en'>
         <body
-          className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased`}
+          className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased bg-background`}
         >
           <Lenis>
             <Header />
