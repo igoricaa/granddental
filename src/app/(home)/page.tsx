@@ -9,10 +9,10 @@ import Gallery from '@/components/gallery';
 export default function Home() {
   return (
     <main>
-      {/* <Hero />
+      <Hero />
       <AboutSection />
       <Gallery className='my-16 sm:my-20 lg:my-28' />
-      <ServicesSection className='mb-0 mt-16 sm:mt-24 lg:my-20 px-4 sm:px-8 lg:px-16 overflow-hidden' /> */}
+      <ServicesSection className='mb-0 mt-16 sm:mt-24 lg:my-20 px-4 sm:px-8 lg:px-16 overflow-hidden' />
       <BeforeAndAfter />
       <DentalTourismSection />
       <CtaSection />
