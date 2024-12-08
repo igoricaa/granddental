@@ -45,7 +45,7 @@ const Bojan = () => {
           src={bojan}
           alt='Grand Dental klinika dr Bojan Perduv '
           fill
-          sizes='(max-width: 1024px) 384px, 600px'
+          sizes='(max-width: 640px) 100vw, (max-width: 1024px) 384px, 600px'
           priority
           className='object-cover'
         />

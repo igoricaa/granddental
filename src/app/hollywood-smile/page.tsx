@@ -56,6 +56,7 @@ const HollywoodSmile = () => {
                 alt='Hollywood Smile'
                 priority
                 fill
+                sizes='300px'
                 className='object-cover'
               />
             </div>
@@ -65,6 +66,7 @@ const HollywoodSmile = () => {
                 alt='Hollywood Smile'
                 priority
                 fill
+                sizes='300px'
                 className='object-cover'
               />
             </div>
@@ -82,6 +84,7 @@ const HollywoodSmile = () => {
                   src={hollywoodSmile3}
                   alt='Hollywood Smile'
                   fill
+                  sizes='100vw'
                   className='object-cover'
                 />
               </div>
@@ -97,6 +100,7 @@ const HollywoodSmile = () => {
                   src={hollywoodSmile4}
                   alt='Hollywood Smile'
                   fill
+                  sizes='100vw'
                   className='object-cover'
                 />
               </div>
