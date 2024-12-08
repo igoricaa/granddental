@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <Gallery className='my-16 sm:my-20 lg:my-28' />
-      <ServicesSection className='mb-0 mt-16 sm:my-24 lg:my-20 px-4 sm:px-8 lg:px-16 overflow-hidden ' />
+      <ServicesSection className='mb-0 mt-16 sm:mt-24 lg:my-20 px-4 sm:px-8 lg:px-16 overflow-hidden ' />
       <BeforeAndAfter beforeImage={beforeImage} afterImage={afterImage} />
       <DentalTourismSection />
       <CtaSection />
