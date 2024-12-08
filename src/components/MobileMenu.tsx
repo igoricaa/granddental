@@ -6,18 +6,12 @@ import { useState } from 'react';
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-    setIsSubmenuOpen(false);
-  };
 
   return (
     <>
       {/* TODO:extract to separate component, reuse in sidearea */}
       <button
-        onClick={handleClick}
+        onClick={() => setIsOpen(!isOpen)}
         className='p-2 hover:opacity-70 transition-opacity relative z-50'
       >
         <div className='w-8 h-8 sm:w-10 sm:h-10 lg:w-6 lg:h-6 flex flex-col justify-center lg:gap-[6px] sm:gap-[10px] gap-2'>
@@ -57,10 +51,8 @@ const MobileMenu = () => {
                 key={route.href}
                 isVisible={isOpen}
                 index={index}
-                isSubmenuOpen={isSubmenuOpen}
-                setIsSubmenuOpen={setIsSubmenuOpen}
                 variant='mobilemenu'
-                onClick={handleClick}
+                onClick={() => setIsOpen(!isOpen)}
                 {...route}
               />
             ))}

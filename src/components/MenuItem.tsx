@@ -1,5 +1,4 @@
 'use client';
-import useMediaQuery from '@/hooks/useMediaQuery';
 import { Link } from 'next-view-transitions';
 import { usePathname } from 'next/navigation';
 
@@ -26,74 +25,24 @@ const getGradientStyle = (variant: 'header' | 'footer' | 'mobilemenu') =>
     ? 'bg-[linear-gradient(#29a0a5_0_0)]'
     : 'bg-[linear-gradient(#eec088_0_0)]';
 
-const SubMenuItem = ({
-  item,
-  variant,
-  pathname,
-  onClick,
-}: {
-  item: { name: string; href: string };
-  variant: 'header' | 'footer' | 'mobilemenu';
-  pathname: string;
-  onClick?: () => void;
-}) => (
-  <li key={item.href}>
-    <Link
-      href={item.href}
-      onClick={onClick}
-      className={`
-      relative inline-block py-1 text-xs uppercase tracking-wider
-      ${
-        variant === 'header' || variant === 'mobilemenu'
-          ? 'text-white bg-[linear-gradient(#fff_0_0)]'
-          : 'bg-[linear-gradient(#eec088_0_0)] text-white/50 hover:text-white'
-      }
-      bg-[length:0%_1px] bg-no-repeat bg-[position:0_100%]
-      transition-[background-size,background-position,color, max-height] duration-300 delay-[0s,0.3s, 0s, 0s]
-      hover:bg-[length:100%_1px] hover:bg-[position:100%_100%]
-      ${
-        pathname === item.href
-          ? 'hover:bg-[length:100%_1px] [&]:bg-[length:100%_1px]'
-          : ''
-      }
-    `}
-    >
-      {item.name}
-    </Link>
-  </li>
-);
-
 const MenuItem = ({
   name,
   href,
-  submenu,
   variant = 'header',
   isVisible,
   index,
-  isSubmenuOpen,
-  setIsSubmenuOpen,
   onClick,
 }: {
   name: string;
   href: string;
-  submenu?: { name: string; href: string }[];
   variant?: 'header' | 'footer' | 'mobilemenu';
   isVisible?: boolean;
   index?: number;
-  isSubmenuOpen?: boolean;
-  setIsSubmenuOpen?: (isOpen: boolean) => void;
   onClick?: () => void;
 }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
   const gradientStyle = getGradientStyle(variant);
-  const isMobile = useMediaQuery('(max-width: 991px)');
-
-  const handleSubmenuClick = () => {
-    if (isMobile) {
-      setIsSubmenuOpen?.(!isSubmenuOpen);
-    }
-  };
 
   return (
     <li
@@ -108,35 +57,13 @@ const MenuItem = ({
           isVisible
             ? 'opacity-100 visible translate-y-0 blur-0 duration-500'
             : 'opacity-0 invisible translate-y-20 blur-[2px] duration-1000'
-        }
-            ${
-              submenu
-                ? isSubmenuOpen
-                  ? 'max-h-[120px] sm:max-h-[152px]'
-                  : 'max-h-[52px] sm:max-h-[76px]'
-                : ''
-            }
-            `
+        }`
       }`}
     >
-      {submenu ? (
-        <span
-          className={`${
-            variant === 'mobilemenu'
-              ? MOBILE_MENU_LINK_STYLES
-              : variant === 'footer'
-              ? FOOTER_LINK_STYLES
-              : HEADER_LINK_STYLES
-          } ${BASE_LINK_STYLES} ${gradientStyle} cursor-pointer`}
-          onClick={handleSubmenuClick}
-        >
-          {name}
-        </span>
-      ) : (
-        <Link
-          href={href}
-          onClick={onClick}
-          className={`
+      <Link
+        href={href}
+        onClick={onClick}
+        className={`
           ${
             variant === 'mobilemenu'
               ? MOBILE_MENU_LINK_STYLES
@@ -151,43 +78,9 @@ const MenuItem = ({
             'hover:bg-[length:100%_2px] [&]:bg-[length:100%_2px] !text-white'
           }
         `}
-        >
-          {name}
-        </Link>
-      )}
-
-      {submenu && (
-        <>
-          {variant === 'header' && (
-            <div className='absolute h-4 w-full -bottom-4' />
-          )}
-          <ul
-            className={`
-              ${variant === 'header' && 'absolute hidden mt-1'}
-              ${
-                variant === 'mobilemenu'
-                  ? `mt-2 transition-all ${
-                      isSubmenuOpen
-                        ? 'opacity-100 visible duration-500 delay-150'
-                        : 'opacity-0 invisible duration-150'
-                    }`
-                  : 'group-hover:block'
-              }
-              min-w-[200px] bg-accent-default px-4 py-2
-            `}
-          >
-            {submenu.map((item) => (
-              <SubMenuItem
-                key={item.href}
-                item={item}
-                variant={variant}
-                pathname={pathname}
-                onClick={onClick}
-              />
-            ))}
-          </ul>
-        </>
-      )}
+      >
+        {name}
+      </Link>
     </li>
   );
 };

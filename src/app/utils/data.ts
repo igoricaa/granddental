@@ -14,16 +14,6 @@ export const routes = [
   {
     name: 'Usluge',
     href: '/usluge',
-    // submenu: [
-    //   {
-    //     name: 'Implantologija',
-    //     href: '/#implantologija',
-    //   },
-    //   {
-    //     name: 'Protetika',
-    //     href: '/#protetika',
-    //   },
-    // ],
   },
   {
     name: 'Dentalni turizam',
