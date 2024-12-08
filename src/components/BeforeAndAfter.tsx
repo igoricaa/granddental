@@ -6,7 +6,42 @@ import { type StaticImageData } from 'next/image';
 import Subtitle from './UI/Subtitle';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import { beforeAndAfterImages } from '@/app/utils/data';
+import after1 from '@/../public/before-and-after/1.jpg';
+import before1 from '@/../public/before-and-after/2.jpg';
+import after2 from '@/../public/before-and-after/3.jpg';
+import before2 from '@/../public/before-and-after/4.jpg';
+import after3 from '@/../public/before-and-after/5.jpg';
+import before3 from '@/../public/before-and-after/6.jpg';
+import after4 from '@/../public/before-and-after/7.jpg';
+import before4 from '@/../public/before-and-after/8.jpg';
+import after5 from '@/../public/before-and-after/9.jpg';
+import before5 from '@/../public/before-and-after/10.jpg';
+import after6 from '@/../public/before-and-after/11.jpg';
+import before6 from '@/../public/before-and-after/12.jpg';
+import after7 from '@/../public/before-and-after/13.jpg';
+import before7 from '@/../public/before-and-after/14.jpg';
+import after8 from '@/../public/before-and-after/15.jpg';
+import before8 from '@/../public/before-and-after/16.jpg';
+import after9 from '@/../public/before-and-after/17.jpg';
+import before9 from '@/../public/before-and-after/18.jpg';
+import after10 from '@/../public/before-and-after/19.jpg';
+import before10 from '@/../public/before-and-after/20.jpg';
+import after11 from '@/../public/before-and-after/21.jpg';
+import before11 from '@/../public/before-and-after/22.jpg';
+
+const beforeAndAfterImages = [
+  { before: before1, after: after1 },
+  { before: before2, after: after2 },
+  { before: before3, after: after3 },
+  { before: before4, after: after4 },
+  { before: before5, after: after5 },
+  { before: before6, after: after6 },
+  { before: before7, after: after7 },
+  { before: before8, after: after8 },
+  { before: before9, after: after9 },
+  { before: before10, after: after10 },
+  { before: before11, after: after11 },
+];
 
 const ImageComparison: React.FC<{ className?: string }> = ({ className }) => {
   const [loaded, setLoaded] = useState(false);
@@ -167,6 +202,7 @@ const BeforeAndAfterComponent = ({
           fill
           className='object-cover'
           sizes={`(max-width: 991px) 100vw, 1000px`}
+          placeholder='blur'
         />
       </div>
 
@@ -180,6 +216,7 @@ const BeforeAndAfterComponent = ({
           fill
           className='object-cover'
           sizes={`(max-width: 991px) 100vw, 1000px`}
+          placeholder='blur'
         />
       </div>
 
