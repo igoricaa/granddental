@@ -45,7 +45,7 @@ const CtaSection = ({ className }: { className?: string }) => {
         />
       </div>
       <h2
-        className={`text-5xl underlined tworows text-center transition-all duration-[1500ms] ease-in-out ${
+        className={`text-5xl underlined before:left-1/2 before:-translate-x-1/2 sm:before:left-0 sm:before:translate-x-0 text-center transition-all duration-[1500ms] ease-in-out ${
           inView
             ? 'translate-y-0 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'

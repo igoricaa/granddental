@@ -24,12 +24,12 @@ const Usluge = () => {
             vašeg stila, vaše moći i vašeg savršenstva. Kod nas, svaki detalj je
             promišljen, jer zaslužujete samo najbolje.
           </p>
-          <Button
+          {/* <Button
             href='/kontakt'
             className={`mt-6 sm:mt-8`}
           >
             Zakažite pregled
-          </Button>
+          </Button> */}
         </div>
       </section>
 
