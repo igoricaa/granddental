@@ -4,6 +4,88 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { type StaticImageData } from 'next/image';
 import Subtitle from './UI/Subtitle';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import { beforeAndAfterImages } from '@/app/utils/data';
+
+const ImageComparison: React.FC<{ className?: string }> = ({ className }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    drag: false,
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
+
+  return (
+    <section
+      className={`flex flex-col items-center relative max-w-8xl mx-auto px-4 sm:px-8 lg:px-0 my-24 sm:my-12 lg:my-28 ${className}`}
+    >
+      <Subtitle>Rezultati</Subtitle>
+      <h2 className='text-5xl underlined mt-5'>Pre i posle nas</h2>
+      <p className='mt-6 text-xl lg:text-2xl'>
+        Pogledajte neke od primera naših radova i uverite se sami u kvalitet
+        naših usluga.
+      </p>
+
+      <div className='aspect-[1000/600] max-w-[1000px] max-h-[600px] w-full h-full mx-auto mt-10 lg:mt-12 relative'>
+        <div ref={sliderRef} className='keen-slider w-full h-full'>
+          {beforeAndAfterImages.map((item, index) => (
+            <BeforeAndAfterComponent
+              key={index}
+              index={index}
+              beforeImage={item.before}
+              afterImage={item.after}
+              className={className}
+            />
+          ))}
+        </div>
+        {loaded && instanceRef.current && (
+          <div className='flex items-center justify-center gap-1 mt-4'>
+            <Arrow
+              left
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+            />
+            <div className='flex lg:hidden justify-center py-3'>
+              {[
+                ...Array(
+                  instanceRef.current.track.details.slides.length
+                ).keys(),
+              ].map((idx) => {
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      instanceRef.current?.moveToIdx(idx);
+                    }}
+                    className={`border-none w-2 h-2 rounded-full bg-white/30 mx-1 p-1 cursor-pointer outline-none ${
+                      currentSlide === idx ? '!bg-white' : ''
+                    }`}
+                  ></button>
+                );
+              })}
+            </div>
+            <Arrow
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+            />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default ImageComparison;
 
 interface ImageComparisonProps {
   beforeImage: string | StaticImageData;
@@ -17,12 +99,13 @@ interface Position {
   percentage: number;
 }
 
-const ImageComparison: React.FC<ImageComparisonProps> = ({
+const BeforeAndAfterComponent = ({
   beforeImage,
   afterImage,
   initialPosition = 50,
-  className = '',
-}) => {
+  className,
+  index,
+}: ImageComparisonProps & { index: number }) => {
   const [isResizing, setIsResizing] = useState<boolean>(false);
   const [position, setPosition] = useState<number>(initialPosition);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -71,79 +154,86 @@ const ImageComparison: React.FC<ImageComparisonProps> = ({
   };
 
   return (
-    <section
-      className={`flex flex-col items-center relative max-w-8xl mx-auto px-4 sm:px-8 lg:px-0 my-24 sm:my-12 lg:my-28 ${className}`}
+    <div
+      ref={containerRef}
+      className={`keen-slider__slide number-slide${index} relative select-none overflow-hidden ${className}`}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={() => setIsResizing(false)}
     >
-      <Subtitle>Rezultati</Subtitle>
-      <h2 className='text-5xl underlined mt-5'>Pre i posle nas</h2>
-      <p className='mt-6 text-xl lg:text-2xl'>
-        Pogledajte neke od primera naših radova i uverite se sami u kvalitet
-        naših usluga.
-      </p>
+      <div className='absolute inset-0'>
+        <Image
+          src={afterImage}
+          alt='Grand Dental klinika - pre i posle'
+          fill
+          className='object-cover'
+          sizes={`(max-width: 991px) 100vw, 1000px`}
+        />
+      </div>
 
       <div
-        ref={containerRef}
-        className='relative mx-auto select-none overflow-hidden bg-gray-100 mt-10 lg:mt-12 w-full h-full aspect-[1000/600] max-w-[1000px] max-h-[600px]'
-        onTouchMove={handleTouchMove}
-        onTouchEnd={() => setIsResizing(false)}
+        className='absolute inset-0'
+        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <div className='absolute inset-0'>
-          <Image
-            src={afterImage}
-            alt='Grand Dental rezultati'
-            quality={90}
-            priority
-            fill
-            className='object-cover'
-            sizes={`(max-width: 991px) 100vw, 1000px`}
-          />
-        </div>
-
-        <div
-          className='absolute inset-0'
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-        >
-          <Image
-            src={beforeImage}
-            alt='Grand Dental rezultati'
-            quality={90}
-            priority
-            fill
-            className='object-cover'
-            sizes={`(max-width: 991px) 100vw, 1000px`}
-          />
-        </div>
-
-        <div
-          className='absolute inset-y-0 transition-transform duration-75'
-          style={{ left: `${position}%` }}
-        >
-          <div className='absolute inset-y-0 -ml-px w-0.5 bg-white shadow-lg' />
-          <button
-            type='button'
-            aria-label='Comparison slider'
-            className='absolute top-1/2 -translate-y-1/2 -ml-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200'
-            onMouseDown={() => setIsResizing(true)}
-            onTouchStart={() => setIsResizing(true)}
-          >
-            <svg
-              className='w-4 h-4 text-gray-600 rotate-90'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M8 9l4-4 4 4m0 6l-4 4-4-4'
-              />
-            </svg>
-          </button>
-        </div>
+        <Image
+          src={beforeImage}
+          alt='Grand Dental klinika - pre i posle'
+          fill
+          className='object-cover'
+          sizes={`(max-width: 991px) 100vw, 1000px`}
+        />
       </div>
-    </section>
+
+      <div
+        className='absolute inset-y-0 transition-transform duration-75'
+        style={{ left: `${position}%` }}
+      >
+        <div className='absolute inset-y-0 -ml-px w-0.5 bg-white shadow-lg' />
+        <button
+          type='button'
+          aria-label='Comparison slider'
+          className='absolute top-1/2 -translate-y-1/2 -ml-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200'
+          onMouseDown={() => setIsResizing(true)}
+          onTouchStart={() => setIsResizing(true)}
+        >
+          <svg
+            className='w-4 h-4 text-gray-600 rotate-90'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M8 9l4-4 4 4m0 6l-4 4-4-4'
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   );
 };
 
-export default ImageComparison;
+function Arrow(props: {
+  left?: boolean;
+  onClick: (e: any) => void;
+  className?: string;
+}) {
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`w-7 h-7 lg:w-10 lg:h-10 fill-white cursor-pointer lg:absolute lg:z-20 lg:top-1/2 lg:-translate-y-1/2 ${
+        props.left ? 'lg:-left-16' : 'lg:-right-16'
+      }  ${props.className}`}
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 24 24'
+    >
+      {props.left && (
+        <path d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' />
+      )}
+      {!props.left && (
+        <path d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z' />
+      )}
+    </svg>
+  );
+}
