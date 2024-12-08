@@ -138,7 +138,7 @@ const ContactForm = () => {
             }}
             render={({ field: { onChange, value } }) => (
               <PhoneInput
-                defaultCountry='ba'
+                defaultCountry='rs'
                 value={value}
                 onChange={(phone) => {
                   onChange(phone);
