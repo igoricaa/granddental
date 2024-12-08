@@ -59,6 +59,9 @@ p {
   .hero-clip-path::before {
     clip-path: ellipse(50% 13% at 50% 100%);
   }
+  .inline-size {
+    inline-size: min-content;
+  }
 }
 
 .underlined {

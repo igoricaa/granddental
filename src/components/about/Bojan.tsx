@@ -35,9 +35,9 @@ const Bojan = () => {
         </p>
       </div>
       <div
-        className={`relative lg:col-span-5 lg:col-start-7 lg:translate-x-10 lg:min-h-[800px] max-w-96 lg:max-w-none ml-auto lg:ml-0 aspect-[544/800] ${
+        className={`relative mt-4 sm:mt-0 lg:col-span-5 lg:col-start-7 lg:translate-x-10 lg:min-h-[800px] sm:max-w-96 lg:max-w-none ml-auto lg:ml-0 aspect-[544/800] ${
           inView
-            ? '-translate-y-4 lg:-translate-y-10 opacity-100 visible blur-0'
+            ? 'translate-y-0 sm:-translate-y-8 lg:-translate-y-10 opacity-100 visible blur-0'
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
         } transition-all duration-[1500ms] delay-[400ms] ease-in-out`}
       >
