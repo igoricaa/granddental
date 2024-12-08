@@ -1,21 +1,14 @@
-import Image from 'next/image';
-import logo from '@/../public/logos/logo.png';
 import { routes } from '@/app/utils/data';
 import MenuItem from './MenuItem';
 import { Link } from 'next-view-transitions';
+import Logo from './UI/logo/logo';
 
 const Footer = () => {
   return (
     <footer className='justify-between px-8 sm:px-16 lg:px-[10vw] py-24 sm:py-32 bg-accent-default'>
       <div className='flex flex-col lg:flex-row gap-16 lg:gap-32'>
-        <Link href='/' className='w-40 h-40 lg:w-52 lg:h-52 relative'>
-          <Image
-            src={logo}
-            alt='logo'
-            fill
-            sizes='(max-width: 1024px) 160px, 208px'
-            className='object-cover'
-          />
+        <Link href='/'>
+          <Logo className='w-40 h-40 lg:w-52 lg:h-52' />
         </Link>
         <div className='flex flex-row justify-between sm:gap-8 lg:gap-32'>
           <div className='flex-1'>

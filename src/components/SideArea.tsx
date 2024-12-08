@@ -1,9 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import logo from '@/../public/logos/logo.png';
 import GoogleMap from './GoogleMap';
+import Logo from './UI/logo/logo';
 
 const SideArea = () => {
   const [showCopyBanner, setShowCopyBanner] = useState(false);
@@ -66,8 +65,8 @@ const SideArea = () => {
             : 'opacity-0 invisible translate-x-full blur-[2px]'
         }`}
       >
-        <Link href='/' className='block w-36'>
-          <Image src={logo} alt='Grand Dental Logo' width={144} height={144} />
+        <Link href='/' className='inline-block'>
+          <Logo className='w-36 h-36' />
         </Link>
 
         <h4 className='mt-8 font-bold text-xl'>Kontakt</h4>
