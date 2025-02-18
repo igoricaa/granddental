@@ -17,9 +17,14 @@ const Hero = () => {
         />
       </div>
       <div className='px-4 sm:px-8 lg:px-0 z-10'>
-        <h1 className='text-4xl sm:text-5xl lg:text-6xl'>Dobrodošli u Grand Dental</h1>
+        <h1 className='text-4xl sm:text-5xl lg:text-6xl'>
+          Dobrodošli u <br className='sm:hidden' />
+          <span className='inline-block text-4xl sm:text-5xl lg:text-6xl font-joan underlined before:w-full'>
+            Grand Dental
+          </span>
+        </h1>
         <h4 className='mt-3 sm:mt-4 text-xl sm:text-2xl'>
-          Naša misija je da vam stvorimo holivudski osmeh, bez filtera.
+          Naša misija je da vam stvorimo holivudski osmeh.
         </h4>
         <Button href='/kontakt' className='mt-6 lg:mt-8'>
           Zakažite pregled

@@ -110,10 +110,8 @@ const Team = () => {
               : 'translate-y-20 opacity-0 invisible blur-[2px]'
           } transition-all duration-[1500ms] ease-in-out`}
         >
-          Grand Dental Clinic je tim stručnjaka sa dugogodišnjim iskustvom u
-          stomatologiji. Naš tim čine stručnjaci iz različitih oblasti
-          stomatologije, koji su posvećeni pružanju najbolje moguće usluge našim
-          pacijentima.
+          Grand Dental klinika okuplja tim stručnjaka sa dugogodišnjim iskustvom
+          u svim oblastima stomatologije.
         </p>
       </div>
 

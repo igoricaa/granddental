@@ -9,9 +9,7 @@ type ServiceItemProps = {
   id: string;
   subtitle: string;
   title: string;
-  description1: string;
-  description2?: string;
-  description3?: string;
+  description: string[];
   buttonText: string;
   image1: StaticImageData;
   image2: StaticImageData;
@@ -23,9 +21,7 @@ const ServiceItem = ({
   id,
   subtitle,
   title,
-  description1,
-  description2,
-  description3,
+  description,
   buttonText,
   image1,
   image2,
@@ -59,9 +55,14 @@ const ServiceItem = ({
       >
         <Subtitle>{subtitle}</Subtitle>
         <h3 className='text-4xl text-white mt-5 underlined'>{title}</h3>
-        <p className='mt-6 lg:mt-8'>{description1}</p>
-        {description2 && <p className='mt-4 lg:mt-6'>{description2}</p>}
-        {description3 && <p className='mt-4 lg:mt-6'>{description3}</p>}
+        {description.map((item, index) => (
+          <p
+            key={index}
+            className={`${index === 0 ? 'mt-6 lg:mt-8' : 'mt-4 lg:mt-6'}`}
+          >
+            {item}
+          </p>
+        ))}
 
         <Button
           href='/kontakt'

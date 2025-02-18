@@ -22,6 +22,16 @@ body {
   color: #fff;
 }
 
+body,
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

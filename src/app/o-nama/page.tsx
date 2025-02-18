@@ -8,9 +8,9 @@ const About = () => {
   return (
     <main className='pt-32 sm:pt-40 lg:pt-64 px-4 sm:px-8'>
       <Intro />
-      <Gallery className='my-16 sm:my-20 lg:my-28 !px-0' />
       <Bojan />
       <Team />
+      <Gallery className='my-8 sm:my-10 lg:my-12 !px-0' />
       <CtaSection />
     </main>
   );

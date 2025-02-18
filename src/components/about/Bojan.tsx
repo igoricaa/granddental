@@ -20,18 +20,23 @@ const Bojan = () => {
             : 'translate-y-80 opacity-0 invisible blur-[2px]'
         } transition-all duration-[1500ms] ease-in-out`}
       >
-        <Subtitle>glavni lik</Subtitle>
+        <Subtitle>Osnivač</Subtitle>
         <h2 className='text-4xl mt-5 underlined text-white'>dr Bojan Perduv</h2>
         <p className='mt-5'>
-          Dr Bojan Perduv je osnivač Grand Dental ordinacije, glavni stomatolog
-          sa višegodišnjim iskustvom u oblasti kompletne oralne rehabilitacije.
+          Dr Bojan Perduv je osnivač Grand Dental klinike, stomatolog sa
+          višegodišnjim iskustvom u oblasti kompletne oralne rehabilitacije.
         </p>
         <p className='mt-4'>
-          Rodjen je u Portugalu 1.11.1990. godine, završio je studije na
-          Stomatološkom Fakultetu u Pančevu, a nastavio edukaciju na
-          stomatološkom fakultetu u Portu, Portugalu. Dr Perduv i njegov tim se
-          maksimalno trude da pruže bezbolnu i detaljnu zdravstvenu terapiju
-          svojim pacijentima, koristeći najsavremenije metode i tehnike.
+          Rodjen je u Portugaliji 1.11.1990. godine, završio je studije na
+          Stomatološkom fakultetu u Pančevu, a nastavio edukaciju na
+          Stomatološkom fakultetu u Portu. U želji da osmisli koncept koji
+          povezuje najkvalitetniju stomatološku negu i mogućnosti koje nude
+          savremene terapije, dr Perduv je okupio na jednom mestu tim stručnjaka
+          sa znanjem i iskustvom u različitim oblastima stomatologije:
+          protetici, hirurgiji, endodonciji, ortodonciji, parodontologiji…Tim
+          vrhunskih lekara u saradnji sa stručnim asistentima i zubnim
+          tehničarima, posvećeno radi na osmišljavanju personalizovanih planova
+          terapije za svakog pacijenta.
         </p>
       </div>
       <div

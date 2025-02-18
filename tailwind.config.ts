@@ -47,6 +47,32 @@ const config: Config = {
       fontFamily: {
         brandon: ['var(--font-brandon-regular)'],
         brandonBold: ['var(--font-brandon-bold)'],
+        joan: ['var(--font-joan)'],
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-310px)' },
+        },
+        reveal: {
+          '0%': { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' },
+          '100%': { clipPath: 'polygon(100% 0, 0 0, 0 100%, 100% 100%)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.7s ease-out',
+        fadeOut: 'fadeOut 1s ease-out 3.4s forwards',
+        slideLeft: 'slideLeft 0.3s ease-out 0.8s forwards',
+        reveal: 'reveal 1.5s ease-out 1.5s forwards',
+        appear: 'fadeIn 0.7s ease-out, slideLeft 0.3s ease-out 0.8s forwards',
       },
     },
   },

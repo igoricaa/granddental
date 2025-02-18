@@ -44,19 +44,27 @@ const DentalTourismSection = () => {
         <h2 className='text-5xl underlined mt-5'>Dentalni turizam</h2>
         <div className='mt-6'>
           <p>
-            Za pacijente koji nisu iz Beograda, razvili smo jedinstven program
-            dentalnog turizma koji omogućava da vrhunski tretmani budu dostupni
-            bez ikakve brige. Naš specijalizovani tim je posvećen tome da svaki
-            korak - od vašeg dolaska do završetka tretmana - bude maksimalno lak
-            i ugodan. Organizujemo vaš dolazak, smeštaj i sve što je potrebno,
-            kako biste vi mogli da se opustite i fokusirate na novi osmeh.
+            Za pacijente iz inostranstva razvili smo jedinstven program
+            Dentalnog turizma koji podrazumeva kompletnu organizaciju procesa
+            lečenja, boravka i prevoza od/do aerodroma. Naš specijalizovani tim
+            je posvećen tome da svaki korak - od vašeg dolaska, do završteka
+            tretmana - bude prijatan i pažljivo isplaniran, tako da pacijenti
+            budu u potpunosti rasterećeni i opušteni. Slobodno vreme između
+            poseta ordinaciji, pacijenti mogu da iskoriste obilazeći
+            znamenitosti srpske prestonice. Ordinacija je smeštena u srcu
+            Vračara, u jednom od najlepših delova Beograda, u kom ste na korak
+            od svih atrakcija ovog grada. Naše osoblje je uvek na raspolaganju
+            za dobru preporuku i pomoć.
           </p>
           <p className='mt-4'>
-            Pružamo ne samo najbolju dentalnu negu, već i potpuno prilagođeno
-            iskustvo koje garantuje vrhunske rezultate bez stresa. Uz nas, put
-            do savršenog osmeha je jednostavan i prijatan - samo zakoračite!
+            Uz nas, put do savršenog osmeha je jednostavan i prijatan - samo
+            zakoračite!
           </p>
-          <Button href='https://www.marcodentaltourism.com/' className='mt-8' externalLink>
+          <Button
+            href='https://www.marcodentaltourism.com/'
+            className='mt-8'
+            externalLink
+          >
             Saznajte više
           </Button>
         </div>

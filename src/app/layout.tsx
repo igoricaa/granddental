@@ -6,6 +6,7 @@ import { ViewTransitions } from 'next-view-transitions';
 import Lenis from '@/components/Lenis';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SplashScreen from '@/components/splash-screen';
 
 const joan = Joan({
   subsets: ['latin'],
@@ -59,6 +60,7 @@ export default function RootLayout({
           className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased bg-background`}
         >
           <Lenis>
+            <SplashScreen />
             <Header />
             {children}
             <Footer />

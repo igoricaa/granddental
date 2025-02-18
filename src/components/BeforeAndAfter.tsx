@@ -6,28 +6,28 @@ import { type StaticImageData } from 'next/image';
 import Subtitle from './UI/Subtitle';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import after1 from '@/../public/before-and-after/1.jpg';
-import before1 from '@/../public/before-and-after/2.jpg';
-import after2 from '@/../public/before-and-after/3.jpg';
-import before2 from '@/../public/before-and-after/4.jpg';
-import after3 from '@/../public/before-and-after/5.jpg';
-import before3 from '@/../public/before-and-after/6.jpg';
-import after4 from '@/../public/before-and-after/7.jpg';
-import before4 from '@/../public/before-and-after/8.jpg';
-import after5 from '@/../public/before-and-after/9.jpg';
-import before5 from '@/../public/before-and-after/10.jpg';
-import after6 from '@/../public/before-and-after/11.jpg';
-import before6 from '@/../public/before-and-after/12.jpg';
-import after7 from '@/../public/before-and-after/13.jpg';
-import before7 from '@/../public/before-and-after/14.jpg';
-import after8 from '@/../public/before-and-after/15.jpg';
-import before8 from '@/../public/before-and-after/16.jpg';
-import after9 from '@/../public/before-and-after/17.jpg';
-import before9 from '@/../public/before-and-after/18.jpg';
-import after10 from '@/../public/before-and-after/19.jpg';
-import before10 from '@/../public/before-and-after/20.jpg';
-import after11 from '@/../public/before-and-after/21.jpg';
-import before11 from '@/../public/before-and-after/22.jpg';
+import after1 from '@/../public/before-and-after/2.jpg';
+import before1 from '@/../public/before-and-after/1.jpg';
+import after2 from '@/../public/before-and-after/4.jpg';
+import before2 from '@/../public/before-and-after/3.jpg';
+import after3 from '@/../public/before-and-after/6.jpg';
+import before3 from '@/../public/before-and-after/5.jpg';
+import after4 from '@/../public/before-and-after/8.jpg';
+import before4 from '@/../public/before-and-after/7.jpg';
+import after5 from '@/../public/before-and-after/10.jpg';
+import before5 from '@/../public/before-and-after/9.jpg';
+import after6 from '@/../public/before-and-after/12.jpg';
+import before6 from '@/../public/before-and-after/11.jpg';
+import after7 from '@/../public/before-and-after/14.jpg';
+import before7 from '@/../public/before-and-after/13.jpg';
+import after8 from '@/../public/before-and-after/16.jpg';
+import before8 from '@/../public/before-and-after/15.jpg';
+import after9 from '@/../public/before-and-after/18.jpg';
+import before9 from '@/../public/before-and-after/17.jpg';
+import after10 from '@/../public/before-and-after/20.jpg';
+import before10 from '@/../public/before-and-after/19.jpg';
+import after11 from '@/../public/before-and-after/22.jpg';
+import before11 from '@/../public/before-and-after/21.jpg';
 
 const beforeAndAfterImages = [
   { before: before1, after: after1 },
@@ -60,7 +60,7 @@ const ImageComparison: React.FC<{ className?: string }> = ({ className }) => {
 
   return (
     <section
-      className={`flex flex-col items-center relative max-w-8xl mx-auto px-4 sm:px-8 lg:px-0 my-24 sm:my-12 lg:my-28 ${className}`}
+      className={`flex flex-col items-center relative max-w-8xl mx-auto ${className}`}
     >
       <Subtitle>Rezultati</Subtitle>
       <h2 className='text-5xl underlined mt-5'>Pre i posle nas</h2>
@@ -138,7 +138,6 @@ const BeforeAndAfterComponent = ({
   beforeImage,
   afterImage,
   initialPosition = 50,
-  className,
   index,
 }: ImageComparisonProps & { index: number }) => {
   const [isResizing, setIsResizing] = useState<boolean>(false);
@@ -191,7 +190,7 @@ const BeforeAndAfterComponent = ({
   return (
     <div
       ref={containerRef}
-      className={`keen-slider__slide number-slide${index} relative select-none overflow-hidden ${className}`}
+      className={`keen-slider__slide number-slide${index} relative select-none overflow-hidden `}
       onTouchMove={handleTouchMove}
       onTouchEnd={() => setIsResizing(false)}
     >
@@ -228,12 +227,12 @@ const BeforeAndAfterComponent = ({
         <button
           type='button'
           aria-label='Comparison slider'
-          className='absolute top-1/2 -translate-y-1/2 -ml-4 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200'
+          className='absolute top-1/2 -translate-y-1/2 -ml-4 lg:-ml-7 w-8 h-8 lg:w-14 lg:h-14 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors duration-200'
           onMouseDown={() => setIsResizing(true)}
           onTouchStart={() => setIsResizing(true)}
         >
           <svg
-            className='w-4 h-4 text-gray-600 rotate-90'
+            className='w-4 h-4 lg:w-7 lg:h-7 text-gray-600 rotate-90'
             fill='none'
             stroke='currentColor'
             viewBox='0 0 24 24'

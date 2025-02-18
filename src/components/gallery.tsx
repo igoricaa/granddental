@@ -17,12 +17,12 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     src: gallery1,
-    className: 'col-span-1 row-span-2 ',
+    className: 'col-span-2 sm:col-span-1 row-span-2 ',
     sizes: '25vw',
   },
   {
     src: gallery2,
-    className: 'col-span-1 row-span-2 ',
+    className: 'col-span-2 sm:col-span-1 row-span-2 ',
     sizes: '25vw',
   },
   {
@@ -37,17 +37,17 @@ const galleryImages: GalleryImage[] = [
   },
   {
     src: gallery5,
-    className: 'col-span-1 row-span-1',
+    className: 'col-span-2 sm:col-span-1 row-span-2 lg:row-span-1',
     sizes: '25vw',
   },
   {
     src: gallery7,
-    className: 'col-span-1 row-span-2',
+    className: 'col-span-2 sm:col-span-1 row-span-4 lg:row-span-2',
     sizes: '25vw',
   },
   {
     src: gallery6,
-    className: 'col-span-1 row-span-1',
+    className: 'col-span-2 sm:col-span-1 row-span-2 lg:row-span-1',
     sizes: '25vw',
   },
 ];

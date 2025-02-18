@@ -10,12 +10,11 @@ const services = {
     id: 'protetika',
     subtitle: 'Protetika',
     title: 'Protetika u Grand Dentalu',
-    description1:
-      'U Grand Dentalu protetika je mnogo više od obnavljanja izgubljenih zuba - to je umetnost vraćanja funkcionalnosti, estetike i samopouzdanja. Sa našim stručnim timom i najmodernijom tehnologijom, pružamo rešenja koja su prilagođena svakom pacijentu, bilo da je reč o krunicama, mostovima ili protezama.',
-    description2:
-      'Koristimo najkvalitetnije materijale, kako bismo osigurali prirodan izgled i dugotrajnost vašeg novog osmeha. Svaki korak procesa, od prve konsultacije do završne ugradnje, pažljivo je isplaniran kako bi rezultat bio savršen, funkcionalan i besprekorno estetski.',
-    description3:
-      'Naša stručnost, iskustvo i posvećenost detaljima čine nas liderima u oblasti protetike i Holllywood Smile.',
+    description: [
+      'Protetika nije samo nadoknada izgubljenih zuba - to je umetnost vraćanja potpune funkcionalnosti, besprekornog izgleda i samopouzdanja. Svaki osmeh koji kreiramo rezultat je znanja i iskustva, najsavremenije tehnologije i individualnog pristupa koji osigurava besprekoran ishod.',
+      'Bilo da vam je potrebna zamena jednog zuba ili kompletna rekonstrukcija osmeha, nudimo protetska rešenja najviše klase - krunice, mostove, proteze i kompletne Hollywood Smile transformacije. Koristimo najkvalitetnije materijale koji garantuju prirodan izgled, kvalitet, funkcionalnost, dugotrajnost i savršeno se uklapaju sa vašim licem.',
+      'Stručnost našeg osoblja, iskustvo i posvećenost detaljima izdvajaju nas kao lidere u oblasti protetike i Hollywood Smile tretmana. Kod nas ne dobijate samo novi osmeh - dobijate sigurnost, samopouzdanje i kvalitet koji traje.',
+    ],
     buttonText: 'Zakažite pregled',
     image1: protetikaImage1,
     image2: protetikaImage2,
@@ -24,22 +23,38 @@ const services = {
     id: 'implantologija',
     subtitle: 'Hirurgija',
     title: 'Hirurgija i implantologija u Grand Dentalu',
-    description1:
-      'U Grand Dentalu, hirurgija i implantologija predstavljaju srž naše posvećenosti vraćanju zdravlja i funkcionalnosti vašim zubima. Naš tim stručnjaka koristi najmodernije tehnike i opremu kako bi pružio vrhunske rezultate u implantologiji, uključujući All on 6 i All on 4 procedure.',
-    description2:
-      'Naša stručnost u hirurgiji garantuje da svaka procedura bude sprovedena sa najvišim standardima sigurnosti i efikasnosti. Od prvobitne konsultacije do postoperativne nege, naš tim je tu da vas vodi kroz svaki korak procesa, obezbeđujući da se osećate udobno i sigurno.',
+    description: [
+      'Preciznost, stručnost i vrhunska tehnologija - to su temelji na kojima gradimo svaki hirurški i implantološki zahvat u Grand Dentalu. Kada je reč o obnovi izgubljenih zuba, kompromisi ne postoje. Zato koristimo najsavremenije metode i materijale kako bismo osigurali dugotrajna, sigurna i estetski besprekorna rešenja.',
+      'Specijalizovani smo za najnaprednije implantološke procedure, uključujući All on 4 i All on 6 tehnike, koji omogućavaju potpunu rekonstrukciju osmeha uz maksimalnu stabilnost i prirodan osećaj. Svaka intervencija je pažljivo planirana, a naši pacijenti prolaze kroz proces sa punim poverenjem, znajući da su u rukama vrhunskih stručnjaka. Od prvog pregleda do završne faze oporavka, naš tim je posvećen vašem komforu, sigurnosti i savršenom rezultatu.',
+    ],
     buttonText: 'Zakažite pregled',
-    image1: hirurgijaImage1,
-    image2: hirurgijaImage2,
+    image1: hirurgijaImage2,
+    image2: hirurgijaImage1,
+  },
+  svesnaSedacija: {
+    id: 'svesnaSedacija',
+    subtitle: 'Svesna sedacija',
+    title: 'Svesna sedacija: Bez stresa i straha',
+    description: [
+      'Zamislite stomatološki tretman koji prolazi bez stresa, nelagodnosti ili straha. Svesna sedacija u našoj ordinaciji osmišljena je da vam pruži upravo to - potpuno opušteno i prijatno iskustvo tokom svakog zahvata.',
+      'Ovaj inovativni pristup koristi bezbednu i pažljivo doziranu kombinaciju lekova koja vas uvodi u stanje duboke relaksacije, dok ste i dalje svesni svog okruženja i sposobni da komunicirate sa našim timom. Savršeno je rešenje za pacijente koji osećaju anksioznost pri poseti stomatologu, imaju potrebu za obimnijim zahvatima ili jednostavno žele maksimalan komfor.',
+      'Kod nas, vaše iskustvo je na prvom mestu. Pre svakog tretmana, naši stručnjaci pažljivo procenjuju vaše zdravstveno stanje i prilagođavaju proceduru kako bi bila potpuno bezbedna i u skladu sa vašim potrebama.',
+      'Zaboravite na neprijatnosti i strahove - stomatološki zahvati mogu biti bezbolno i prijatno iskustvo. Prepustite se našoj brizi i otkrijte novu dimenziju stomatološke nege.',
+    ],
+    buttonText: 'Zakažite pregled',
+    image1: hirurgijaImage2,
+    image2: hirurgijaImage1,
   },
 };
 
 const ServicesSection = ({
   hasTitle = true,
   className,
+  preview = false,
 }: {
   hasTitle?: boolean;
   className?: string;
+  preview?: boolean;
 }) => {
   return (
     <section className={`${className}`}>
@@ -56,15 +71,20 @@ const ServicesSection = ({
           </h2>
 
           <p>
-            U Grand Dental klinici nudimo širok spektar stomatoloških usluga.
-            Naš tim stručnjaka će se pobrinuti da dobijete najbolju moguću
-            uslugu i da se osećate prijatno tokom celog procesa.
+            U Grand Dental klinici nudimo širok spektar stomatoloških usluga.Naš
+            tim stručnjaka će se pobrinuti da dobijete najbolju moguću negu i da
+            se osećate prijatno tokom procesa lečenja.
           </p>
         </InViewWrapper>
       )}
 
       <ServiceItem {...services.protetika} />
-      <ServiceItem {...services.implantologija} invert className='!mt-16 sm:!mt-0 lg:!mt-32' />
+      <ServiceItem
+        {...services.implantologija}
+        invert
+        className='!mt-16 sm:!mt-0 lg:!mt-32'
+      />
+      {!preview && <ServiceItem {...services.svesnaSedacija} />}
     </section>
   );
 };
