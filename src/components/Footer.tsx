@@ -2,6 +2,7 @@ import { routes } from '@/app/utils/data';
 import MenuItem from './MenuItem';
 import { Link } from 'next-view-transitions';
 import Logo from './UI/logo/logo';
+import GoogleMap from './GoogleMap';
 
 const Footer = () => {
   return (
@@ -10,19 +11,21 @@ const Footer = () => {
         <Link href='/'>
           <Logo className='w-40 h-40 lg:w-52 lg:h-52' />
         </Link>
-        <div className='flex flex-row justify-between sm:gap-8 lg:gap-32'>
-          <div className='flex-1'>
-            <h4 className='font-bold text-2xl lg:text-3xl uppercase'>Meni</h4>
+        <div className='flex flex-col sm:flex-row sm:flex-wrap gap-8 sm:gap-16 lg:gap-32'>
+          <div className='flex-1 sm:flex-none'>
+            <p className='font-joan font-bold text-2xl lg:text-3xl uppercase'>
+              Meni
+            </p>
             <ul className='mt-6 lg:mt-8 flex flex-col gap-2'>
               {routes.map((route) => (
                 <MenuItem key={route.href} {...route} variant='footer' />
               ))}
             </ul>
           </div>
-          <div className='flex-1'>
-            <h4 className='font-bold text-2xl lg:text-3xl uppercase'>
+          <div className='flex-1 sm:flex-none'>
+            <p className='font-joan font-bold text-2xl lg:text-3xl uppercase'>
               Kontakt
-            </h4>
+            </p>
             <div className='relative w-fit'>
               <p className='mt-6 lg:mt-8 cursor-pointer hover:opacity-80'>
                 info@granddental.rs
@@ -45,6 +48,13 @@ const Footer = () => {
                 Instagram
               </Link>
             </div>
+          </div>
+
+          <div className='flex-1 w-full basis-full'>
+            <p className='font-joan font-bold text-2xl lg:text-3xl uppercase'>
+              Posetite nas:
+            </p>
+            <GoogleMap className='aspect-[1235/647] rounded-[30px] w-full lg:w-[450px] mt-6 sm:mt-10 lg:mt-10' />
           </div>
         </div>
       </div>

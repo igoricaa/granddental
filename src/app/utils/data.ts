@@ -78,3 +78,16 @@ export type TeamMemberType = {
   name: string;
   image: StaticImageData;
 };
+
+
+export type ServiceItemProps = {
+  id: string;
+  subtitle: string;
+  title: string;
+  description: string[];
+  buttonText: string;
+  image1?: StaticImageData;
+  image2?: StaticImageData;
+  invert?: boolean;
+  className?: string;
+};

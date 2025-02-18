@@ -42,8 +42,6 @@ const services = {
       'Zaboravite na neprijatnosti i strahove - stomatološki zahvati mogu biti bezbolno i prijatno iskustvo. Prepustite se našoj brizi i otkrijte novu dimenziju stomatološke nege.',
     ],
     buttonText: 'Zakažite pregled',
-    image1: hirurgijaImage2,
-    image2: hirurgijaImage1,
   },
 };
 
@@ -84,7 +82,12 @@ const ServicesSection = ({
         invert
         className='!mt-16 sm:!mt-0 lg:!mt-32'
       />
-      {!preview && <ServiceItem {...services.svesnaSedacija} />}
+      {!preview && (
+        <ServiceItem
+          {...services.svesnaSedacija}
+          className='mt-16 sm:mt-0 lg:mt-32'
+        />
+      )}
     </section>
   );
 };
