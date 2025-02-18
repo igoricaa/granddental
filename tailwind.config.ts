@@ -60,7 +60,7 @@ const config: Config = {
         },
         slideLeft: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-310px)' },
+          '100%': { transform: 'translateX(-250px)' },
         },
         reveal: {
           '0%': { clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' },

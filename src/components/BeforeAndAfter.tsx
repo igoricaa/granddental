@@ -24,8 +24,6 @@ import after8 from '@/../public/before-and-after/16.jpg';
 import before8 from '@/../public/before-and-after/15.jpg';
 import after9 from '@/../public/before-and-after/18.jpg';
 import before9 from '@/../public/before-and-after/17.jpg';
-import after10 from '@/../public/before-and-after/20.jpg';
-import before10 from '@/../public/before-and-after/19.jpg';
 import after11 from '@/../public/before-and-after/22.jpg';
 import before11 from '@/../public/before-and-after/21.jpg';
 
@@ -39,7 +37,6 @@ const beforeAndAfterImages = [
   { before: before7, after: after7 },
   { before: before8, after: after8 },
   { before: before9, after: after9 },
-  { before: before10, after: after10 },
   { before: before11, after: after11 },
 ];
 
@@ -63,7 +60,7 @@ const ImageComparison: React.FC<{ className?: string }> = ({ className }) => {
       className={`flex flex-col items-center relative max-w-8xl mx-auto ${className}`}
     >
       <Subtitle>Rezultati</Subtitle>
-      <h2 className='text-5xl underlined mt-5'>Pre i posle nas</h2>
+      <h2 className='text-5xl underlined mt-5'>Pre i posle</h2>
       <p className='mt-6 text-xl lg:text-2xl'>
         Pogledajte neke od primera naših radova i uverite se sami u kvalitet
         naših usluga.

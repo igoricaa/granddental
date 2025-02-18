@@ -33,10 +33,10 @@ const SplashScreen = () => {
       <div
         className={`fixed inset-0 z-[1000] w-screen h-screen flex items-center gap-x-16 lg:gap-x-20 justify-center bg-background animate-fadeOut pointer-events-none`}
       >
-        <div className='absolute lg:animate-appear flex flex-col items-center lg:flex-row gap-y-4 sm:gap-y-10'>
-          <Logo className='w-20 sm:w-48 lg:w-56 h-fit lg:left-auto lg:translate-x-0 lg:top-0 animate-fadeIn lg:animate-none' />
-          <p className='lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-64 whitespace-nowrap text-white text-4xl sm:text-6xl lg:text-7xl font-joan [clip-path:polygon(0_0,0_0,0_100%,0%_100%)] animate-reveal'>
-            Grand Dental Clinic
+        <div className='absolute lg:animate-appear flex flex-col items-center lg:flex-row gap-y-8 sm:gap-y-10'>
+          <Logo className='w-36 sm:w-52 lg:w-56 h-fit lg:left-auto lg:translate-x-0 lg:top-0 animate-fadeIn lg:animate-none' />
+          <p className='lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-64 whitespace-nowrap text-white text-6xl sm:text-8xl lg:text-7xl font-joan [clip-path:polygon(0_0,0_0,0_100%,0%_100%)] animate-reveal'>
+            Grand Dental
           </p>
         </div>
       </div>
