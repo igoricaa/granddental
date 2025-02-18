@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='flex-1 w-full basis-full'>
+          <div className='flex-1 w-full basis-full lg:basis-0'>
             <p className='font-joan font-bold text-2xl lg:text-3xl uppercase'>
               Posetite nas:
             </p>
