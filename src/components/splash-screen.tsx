@@ -18,7 +18,7 @@ const SplashScreen = () => {
 
     setTimeout(() => {
       setShowSplashScreen(false);
-    }, 3700);
+    }, 4200);
   }, []);
 
   useEffect(() => {
