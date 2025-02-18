@@ -3,6 +3,8 @@
 import { routes } from '@/app/utils/data';
 import MenuItem from './MenuItem';
 import { useState } from 'react';
+import Logo from './UI/logo/logo';
+import { Link } from 'next-view-transitions';
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +46,9 @@ const MobileMenu = () => {
             : 'translate-x-full opacity-0 invisible'
         }`}
       >
+        <Link href='/' className='absolute top-4 left-4'>
+          <Logo className='sm:w-[64px] sm:h-[64px] w-[48px] h-[48px] ' />
+        </Link>
         <div className='w-full h-full pt-32 sm:pt-48 px-4 sm:px-8'>
           <ul className={`transition-all duration-500 ease-in-out`}>
             {routes.map((route, index: number) => (
