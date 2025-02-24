@@ -9,11 +9,18 @@ import { Link } from 'next-view-transitions';
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    document.body.toggleAttribute('data-lenis-prevent', !isOpen);
+    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       {/* TODO:extract to separate component, reuse in sidearea */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleMenu}
         className='p-2 hover:opacity-70 transition-opacity relative z-50'
       >
         <div className='w-8 h-8 sm:w-10 sm:h-10 lg:w-6 lg:h-6 flex flex-col justify-center lg:gap-[6px] sm:gap-[10px] gap-2'>
@@ -57,7 +64,7 @@ const MobileMenu = () => {
                 isVisible={isOpen}
                 index={index}
                 variant='mobilemenu'
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={toggleMenu}
                 {...route}
               />
             ))}
