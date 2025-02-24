@@ -16,6 +16,8 @@ type FormData = {
   message: string;
 };
 
+const WEB3FORMS_ACCESS_KEY = process.env.WEB3FORMS_ACCESS_KEY;
+
 const ContactForm = () => {
   const {
     control,
@@ -59,7 +61,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className='mt-12'>
         <input
           type='hidden'
-          value='8344aabe-a316-41f3-a400-bbdf245526d9'
+          value={WEB3FORMS_ACCESS_KEY}
           {...register('access_key')}
         />
         <input
