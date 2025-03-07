@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import { Joan } from 'next/font/google';
+import { Joan, Nunito } from 'next/font/google';
 import './globals.css';
 import { ViewTransitions } from 'next-view-transitions';
 import Lenis from '@/components/Lenis';
@@ -16,15 +15,11 @@ const joan = Joan({
   style: ['normal'],
 });
 
-const brandonRegular = localFont({
-  src: './fonts/BrandonText-Regular.woff2',
-  variable: '--font-brandon-regular',
-  weight: '400',
-});
-const brandonBold = localFont({
-  src: './fonts/BrandonText-Bold.woff2',
-  variable: '--font-brandon-bold',
-  weight: '700',
+const nunito = Nunito({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-nunito',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -57,7 +52,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang='sr'>
         <body
-          className={`${brandonRegular.variable} ${brandonBold.variable} ${joan.variable} antialiased bg-background`}
+          className={`${nunito.variable} ${joan.variable} antialiased bg-background`}
         >
           <Lenis>
             <SplashScreen />

@@ -45,8 +45,7 @@ const config: Config = {
         buttonTextDark: 'var(--button-text-dark)',
       },
       fontFamily: {
-        brandon: ['var(--font-brandon-regular)'],
-        brandonBold: ['var(--font-brandon-bold)'],
+        nunito: ['var(--font-nunito)'],
         joan: ['var(--font-joan)'],
       },
       keyframes: {
